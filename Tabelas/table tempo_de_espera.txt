@@ -1,0 +1,24 @@
+DROP TABLE `tempo_de_espera`;
+
+CREATE TABLE `tempo_de_espera` (
+  `id_hospital` mediumint,
+  `manha` mediumint default NULL,
+  `tarde` mediumint default NULL,
+  `noite` mediumint default NULL
+);
+
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (1,75,76,94);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (2,72,3,52);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (3,100,21,117);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (4,59,101,102);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (5,52,14,21);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (6,78,33,27);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (7,33,108,81);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (8,46,52,6);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (9,97,35,14);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (10,11,79,96);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (11,40,90,57);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (12,10,72,33);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (13,35,106,52);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (14,53,38,69);
+INSERT INTO `tempo_de_espera` (`id_hospital`,`manha`,`tarde`,`noite`) VALUES (15,24,14,86);

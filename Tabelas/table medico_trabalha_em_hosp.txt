@@ -1,0 +1,17 @@
+DROP TABLE `medico_trabalha_em_hosp`;
+
+CREATE TABLE `medico_trabalha_em_hosp` (
+  `id_medico` mediumint default NULL,
+  `id_hospital` mediumint default NULL
+);
+
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (2,1),(22,13),(15,6),(20,1),(18,10),(20,1),(9,9),(26,13),(8,3),(9,7);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (9,13),(4,15),(25,13),(15,4),(2,4),(1,15),(22,6),(24,7),(22,7),(19,3);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (16,13),(16,3),(22,4),(24,8),(25,3),(5,6),(2,8),(13,11),(16,3),(19,2);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (13,3),(12,14),(10,14),(22,13),(15,8),(27,13),(7,14),(1,10),(21,1),(3,7);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (8,4),(20,3),(7,4),(24,2),(1,13),(10,8),(9,8),(1,2),(5,10),(17,15);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (14,6),(14,7),(7,7),(5,4),(8,8),(17,11),(23,8),(13,15),(5,10),(23,9);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (15,14),(20,8),(15,8),(7,9),(27,7),(9,14),(20,3),(16,1),(26,5),(21,1);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (26,15),(25,12),(3,5),(20,5),(7,9),(1,1),(10,10),(8,5),(3,14),(7,1);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (10,6),(3,13),(11,7),(26,4),(10,2),(23,6),(20,7),(1,3),(6,2),(1,3);
+INSERT INTO `medico_trabalha_em_hosp` (`id_medico`,`id_hospital`) VALUES (24,10),(11,9),(6,2),(18,6),(3,1),(14,8),(25,8),(17,6),(2,2),(14,1);

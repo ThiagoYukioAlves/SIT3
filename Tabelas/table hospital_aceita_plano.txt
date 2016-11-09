@@ -1,0 +1,15 @@
+DROP TABLE `hospital_aceita_plano`;
+
+CREATE TABLE `hospital_aceita_plano` (
+  `id_hospital` mediumint default NULL,
+  `id_plano` mediumint default NULL
+);
+
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (14,15),(3,3),(5,6),(12,2),(6,5),(9,15),(8,8),(13,1),(14,1),(9,7);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (14,13),(11,12),(15,7),(4,13),(11,7),(13,10),(2,5),(7,10),(10,10),(7,5);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (14,7),(12,6),(6,6),(9,13),(8,14),(9,12),(5,10),(3,3),(7,3),(8,10);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (12,3),(3,6),(10,9),(10,11),(8,9),(8,8),(10,7),(3,6),(9,1),(15,5);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (4,6),(5,1),(2,15),(5,2),(15,15),(5,13),(4,3),(4,10),(12,14),(5,1);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (10,5),(14,5),(15,9),(2,14),(1,10),(10,15),(11,2),(5,10),(9,13),(4,4);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (3,3),(9,8),(10,8),(7,4),(1,8),(14,3),(12,1),(5,3),(14,11),(6,13);
+INSERT INTO `hospital_aceita_plano` (`id_hospital`,`id_plano`) VALUES (3,4),(2,2),(13,10),(3,16),(6,16),(15,2),(12,16),(14,5),(8,1),(4,9);

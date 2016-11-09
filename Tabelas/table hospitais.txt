@@ -1,0 +1,23 @@
+DROP TABLE `hospitais`;
+
+CREATE TABLE `hospitais` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `endereco` varchar(255) default NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `hospitais` (`endereco`) VALUES ("Avenida Albert Einstein, 627");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Diogo Cabrera, 94");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Brigadeiro Gavião Peixoto, 123");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Guilherme Asbahr Neto, 438");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Av. Min. Gabriel Resende Passos, 550");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Barão do Rio Branco, 555");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Avenida João Firmino, 250");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Padre Adelino, 901");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Barão de Iguape, 209");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Maestro Cardim, 769");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Av. Mariana Ubaldina do Espírito Santo, 140");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Cel. Fernando Prestes, 1.177");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Av. Alcântara Machado, 60");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua do Oratório, 1369");
+INSERT INTO `hospitais` (`endereco`) VALUES ("Rua Manoel Coelho, 845");

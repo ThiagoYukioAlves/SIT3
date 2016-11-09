@@ -1,0 +1,24 @@
+DROP TABLE `planos_de_saude`;
+
+CREATE TABLE `planos_de_saude` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `nome_plano` varchar(255) default NULL,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("ameplan");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("amil");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("biovida");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("bradesco");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("classes_laboriosas");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("garantia_saude");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("green_line");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("intermedica");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("one_health");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("medical_heatlh");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("oeste_saude");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("santa_helena");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("sao_cristovao");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("sulamerica");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("transmontano");
+INSERT INTO `planos_de_saude` (`nome_plano`) VALUES ("unimed");
