@@ -21,7 +21,7 @@ USE `mydb` ;
 -- Table `mydb`.`planos_de_saude`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`planos_de_saude` (
-  `id` INT UNSIGNED NOT NULL COMMENT '',
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `nome_plano` VARCHAR(45) NOT NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
@@ -61,7 +61,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`consulta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`consulta` (
-  `id_consulta` INT UNSIGNED NOT NULL COMMENT '',
+  `id_consulta` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `id_usuario` INT UNSIGNED NOT NULL COMMENT '',
   `id_medico` INT UNSIGNED NOT NULL COMMENT '',
   `dia` DATE NOT NULL COMMENT '',
