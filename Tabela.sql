@@ -37,15 +37,10 @@ CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `portador_de_deficiencia` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '',
   `data_de_nascimento` DATE NULL COMMENT '',
   `telefone` INT UNSIGNED NULL COMMENT '',
+  `privilegio` INT DEFAULT 0 COMMENT '',
   `endereco` VARCHAR(90) NULL COMMENT '',
   `senha` VARCHAR(45) NOT NULL COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '',
-  INDEX `fk_usuario_planos_de_saude1_idx` (`plano_de_saude` ASC)  COMMENT '',
-  CONSTRAINT `fk_usuario_planos_de_saude1`
-    FOREIGN KEY (`plano_de_saude`)
-    REFERENCES `mydb`.`planos_de_saude` (`nome_plano`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
 
@@ -72,18 +67,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`consulta` (
   `dia` DATE NOT NULL COMMENT '',
   `horario_inicio` TIME NOT NULL COMMENT '',
   `horario_termino` TIME NOT NULL COMMENT '',
-  INDEX `fk_consulta_medico1_idx` (`id_medico` ASC)  COMMENT '',
-  PRIMARY KEY (`id_consulta`)  COMMENT '',
-  CONSTRAINT `fk_consulta_usuario`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `mydb`.`usuario` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_consulta_medico1`
-    FOREIGN KEY (`id_medico`)
-    REFERENCES `mydb`.`medico` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id_consulta`)  COMMENT '')
 ENGINE = InnoDB;
 
 
@@ -107,12 +91,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tempo_de_espera` (
   `manha` INT UNSIGNED NULL COMMENT '',
   `tarde` INT UNSIGNED NULL COMMENT '',
   `noite` INT UNSIGNED NULL COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '',
-  CONSTRAINT `fk_tempo_de_espera_hospitais1`
-    FOREIGN KEY (`id_hospital`)
-    REFERENCES `mydb`.`hospitais` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`)  COMMENT ''
+  )
 ENGINE = InnoDB;
 
 
@@ -123,19 +103,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`medico_trabalha_em_hosp` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `id_hospital` INT UNSIGNED NOT NULL COMMENT '',
   `id_medico` INT UNSIGNED NOT NULL COMMENT '',
-  INDEX `fk_medico_has_hospitais_hospitais1_idx` (`id_hospital` ASC)  COMMENT '',
-  INDEX `fk_medico_has_hospitais_medico1_idx` (`id_medico` ASC)  COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '',
-  CONSTRAINT `fk_medico_has_hospitais_medico1`
-    FOREIGN KEY (`id_medico`)
-    REFERENCES `mydb`.`medico` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_medico_has_hospitais_hospitais1`
-    FOREIGN KEY (`id_hospital`)
-    REFERENCES `mydb`.`hospitais` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
 
@@ -146,19 +114,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`planos_de_saude_has_hospitais` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `planos_de_saude_id` INT UNSIGNED NOT NULL COMMENT '',
   `hospitais_id` INT UNSIGNED NOT NULL COMMENT '',
-  INDEX `fk_planos_de_saude_has_hospitais_hospitais1_idx` (`hospitais_id` ASC)  COMMENT '',
-  INDEX `fk_planos_de_saude_has_hospitais_planos_de_saude1_idx` (`planos_de_saude_id` ASC)  COMMENT '',
-  PRIMARY KEY (`id`)  COMMENT '',
-  CONSTRAINT `fk_planos_de_saude_has_hospitais_planos_de_saude1`
-    FOREIGN KEY (`planos_de_saude_id`)
-    REFERENCES `mydb`.`planos_de_saude` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_planos_de_saude_has_hospitais_hospitais1`
-    FOREIGN KEY (`hospitais_id`)
-    REFERENCES `mydb`.`hospitais` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
 
