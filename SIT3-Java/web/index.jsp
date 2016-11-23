@@ -1,9 +1,7 @@
 <%-- 
-Teste de commit
-
     Document   : index
     Created on : Nov 9, 2016, 9:24:41 PM
-    Author     : Gabriel
+    Author     : Gabriel e thiago
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,15 +10,26 @@ Teste de commit
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Hospiwaze</title>
     </head>
     <body>
         
-        <div>
-            <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a><br>
-            <a href='consulta_hospitais.jsp'>Consulta Hospitais</a><br>
-            <a href='formulario_cadastro_usuario.jsp'>Cadastra usuario</a><br>
-            <form class="appnitro"  method="post" action="calculate.jsp">
+        <div style="border: 2px solid red" >
+            <div>
+                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+            </div>
+            <div>
+                <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
+            </div>
+            <div>
+                <a style="display: inline" href='consulta_medicos.jsp'>Consulta Medicos</a>
+            </div>
+            <div>
+                <a style="display: inline" href='formulario_cadastro_usuario.jsp'>Cadastra usuario</a>
+            </div>
+        </div>    
+            
+        <form class="appnitro"  method="post" action="calculate.jsp">
         <fieldset>
 
         <!-- Form Name -->
@@ -45,11 +54,8 @@ Teste de commit
         </div>
 
         <!-- Button -->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="button"></label>
-          <div class="col-md-4">
-            <button id="button" name="button" class="btn btn-primary">Enviar</button>
-          </div>
+        <div>
+            <button type="button">Enviar</button>
         </div>
 
         </fieldset>
@@ -57,7 +63,5 @@ Teste de commit
            
            
         
-
-        </div>
     </body>
 </html>

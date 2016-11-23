@@ -5,7 +5,7 @@
 --%>
 
 <jsp:useBean id="bd" class="database.DbManager" scope="session"/>
-<jsp:useBean id="medicos" class="medico.Medico" scope="session"/>
+<jsp:useBean id="medico" class="medico.Medico" scope="session"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -17,10 +17,20 @@
     
   </head>
   <body>
-
-        <%medico.db.query("SELECT * FROM medicos"); %>
-        <%= medicos.RetornaSelect() %>
+        <!--Pega toda tabela medicos no banco de dados-->
+        <%medico.consultaMedicos();%>
         
+        <!--Cria uma tabela-->
+        <table>
+            <tr>   <!--Linhas com titulos-->
+                <th>Medico</th>
+                <th>Especialidade</th>
+                <th>Telefone</th>
+                <th>CRM</th>
+            </tr>
+            
+            
+        </table>
  
     
   </body>
