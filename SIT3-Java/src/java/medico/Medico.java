@@ -73,9 +73,13 @@ public class Medico {
     
     public void salvarMedico()
     {
-        String query = "INSERT INTO medico (CRM,especialidade,nome,telefone,estado) VALUES" +
-                "('" + this.CRM + "'," + this.especialidade + "," + this.nome + ",'" + this.telefone + ",'" + this.estado + "')";
+        String query = "INSERT INTO medico (CRM,especialidade,nome,telefone) VALUES" +
+                "('" + this.CRM + "','" + this.especialidade + "','" + this.nome + "','" + this.telefone + "')";
         db.execute(query);
         
+    }
+    
+    public DbCollection consultaMedicos() throws Exception{
+        return db.query("select * from medico");
     }
 }

@@ -1,6 +1,6 @@
 <%-- 
     Document   : formulario_cadastro_medico
-    Created on : Nov 23, 2016, 4:04:47 PM
+    Created on : Nov 23, 2016, 6:44:32 PM
     Author     : thiago
 --%>
 
@@ -17,9 +17,12 @@
     <br>Nome do m&eacute;dico:<br>
     <input type="text" name="nome"><br><br>
     Especialidade:<br>
-    <input type="text" name="especialidade""><br><br>
+    <input type="text" name="especialidade"><br><br>
+    Telefone:<br>
+    <input type="text" name="telefone"><br><br>
     CRM:<br>
-    <input type="number" name="CRM"  min="1000" max="9999999999">/
+    <input type="number" name="CRM"  min="1000" max="9999999999">
+    <!--
     <select name="estado">
       <option value="AC">AC</option>
       <option value="AL">AL</option>
@@ -49,7 +52,7 @@
       <option value="SE">SE</option>
       <option value="TO">TO</option>
     </select><br><br>
-    
+    -->
     <!--
     Hospital: <br>
     <select name="hospital_trabalha">
