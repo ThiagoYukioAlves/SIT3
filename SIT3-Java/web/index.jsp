@@ -17,7 +17,7 @@ Teste de commit
     <body>
         
         <div>
-            
+            <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a><br>
             <a href='consulta_hospitais.jsp'>Consulta Hospitais</a><br>
             <a href='formulario_cadastro_usuario.jsp'>Cadastra usuario</a><br>
             <form class="appnitro"  method="post" action="calculate.jsp">

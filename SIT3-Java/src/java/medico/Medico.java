@@ -16,6 +16,7 @@ public class Medico {
     private String especialidade;
     private String CRM;
     private String telefone;
+    private String estado;
 
     
     private DbManager db = new DbManager();
@@ -25,7 +26,6 @@ public class Medico {
     public void setNome(String nome){
         this.nome = nome;
     }
-    
     
     public void setTelefone(String telefone) {
         this.telefone = telefone;
@@ -37,6 +37,10 @@ public class Medico {
     
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+    
+    public void setEstado(String estado){
+        this.estado = estado;
     }
     
 
@@ -57,6 +61,10 @@ public class Medico {
         return this.especialidade;
     }
     
+    public String getEstado() {
+        return this.estado;
+    }
+    
     
 
 
@@ -65,8 +73,8 @@ public class Medico {
     
     public void salvarMedico()
     {
-        String query = "INSERT INTO medico (CRM,especialidade,nome,telefone) VALUES" +
-                "('" + this.CRM + "'," + this.especialidade + "," + this.nome + ",'" + this.telefone + "')";
+        String query = "INSERT INTO medico (CRM,especialidade,nome,telefone,estado) VALUES" +
+                "('" + this.CRM + "'," + this.especialidade + "," + this.nome + ",'" + this.telefone + ",'" + this.estado + "')";
         db.execute(query);
         
     }
