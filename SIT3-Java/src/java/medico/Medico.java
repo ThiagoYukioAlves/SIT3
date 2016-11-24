@@ -79,7 +79,15 @@ public class Medico {
         
     }
     
+    // Transforma o objeto que chega do banco de dados em uma tabela
     public DbCollection consultaMedicos() throws Exception{
-        return db.query("select * from medico");
+        DbCollection queryMedicos = db.query("select * from medico");
+        String[][] tabelaMedicos;
+        
+        for(int i = 0; i < queryMedicos.size(); i++){
+            
+        }
+        
+        return tabelaMedicos;
     }
 }
