@@ -14,41 +14,44 @@
     </head>
     <body>
         
-        <div style="border: 2px solid red" >
-            <div>
-                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+        <div style="border-bottom: 1px solid black; padding: 5px; background-color: #B5D3E7" >
+            <div style="display: inline; margin: 5px; font-size: 2em; padding: 5px;">
+                <a href='index.jsp'>Hospiwaze</a>
             </div>
-            <div>
-                <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
+            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+                <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
             </div>
-            <div>
-                <a style="display: inline" href='consulta_medicos.jsp'>Consulta Medicos</a>
+            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+                <a href='consulta_hospitais.jsp'>Consulta Hospitais</a>
             </div>
-            <div>
-                <a style="display: inline" href='formulario_cadastro_usuario.jsp'>Cadastra usuario</a>
+            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+                <a href='consulta_medicos.jsp'>Consulta Medicos</a>
+            </div>
+            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+                <a href='formulario_cadastro_usuario.jsp'>Cadastra usuario</a>
             </div>
         </div>    
             
-        <form class="appnitro"  method="post" action="calculate.jsp">
+        <form  method="post" action="calculate.jsp" style="background-color: #D2E0F4; margin: 20px;">
         <fieldset>
 
         <!-- Form Name -->
         <legend>Form Name</legend>
         
         <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="origem">Origem</label>  
-          <div class="col-md-4">
-          <input id="origem" name="origem" type="text" placeholder="" class="form-control input-md" id="origem">
+        <div>
+          <labelfor="origem">Origem</label>  
+          <div>
+          <input id="origem" name="origem" type="text" placeholder="Endereco origem">
 
           </div>
         </div>
 
         <!-- Text input-->
-        <div class="form-group">
-          <label class="col-md-4 control-label" for="destino">Destino</label>  
-          <div class="col-md-4">
-          <input id="destino" name="destino" type="text" placeholder="" class="form-control input-md" id="destino">
+        <div>
+          <label>Destino</label>  
+          <div>
+          <input id="destino" name="destino" type="text" placeholder="Endereco destino">
 
           </div>
         </div>
