@@ -79,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`hospitais` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `nome` VARCHAR(45) NOT NULL COMMENT '',
   `endereco` VARCHAR(90) NOT NULL COMMENT '',
+  `telefone` VARCHAR(12) NOT NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
 
