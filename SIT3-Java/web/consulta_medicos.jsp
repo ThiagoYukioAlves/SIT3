@@ -17,12 +17,19 @@
     
   </head>
   <body>
+        <h1>Consulta de médicos</h1>
         <!--Pega toda tabela medicos no banco de dados-->
-        <%medico.consultaMedicos();%>
+        <%DbCollection listaMedicos = medico.consultaMedicos();%>
         
         <!--Cria uma tabela-->
         <table>
             <tr>   <!--Linhas com titulos-->
+                <th>Medico</th>
+                <th>Especialidade</th>
+                <th>Telefone</th>
+                <th>CRM</th>
+            </tr>
+            <tr>   <!--Linhas com medico-->
                 <th>Medico</th>
                 <th>Especialidade</th>
                 <th>Telefone</th>

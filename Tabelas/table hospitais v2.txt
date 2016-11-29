@@ -1,0 +1,15 @@
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALBERT EINSTEIN","Avenida Albert Einstein, 627 - Morumbi - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALBERT SABIN","Unidade Imirim - Rua Diogo Cabrera, 94 - Imirim - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALBERT SABIN","Unidade Lapa - Rua Brigadeiro Gavião Peixoto 123 - Lapa - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALVORADA CHÁCARA FLORA","Rua Guilherme Asbahr Neto, 438 - Chácara Flora - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALVORADA MOEMA","Av. Min. Gabriel Resende Passos, 550 - Moema - São paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ALVORADA SANTO AMARO","Rua Barão do Rio Branco, 555 - Santo Amaro - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("ASSUNÇÃO","Avenida João Firmino, 250 - Assunção - S.B. do Campo - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("AVICCENA","Rua Padre Adelino, 901 - Belém - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("BANDEIRANTES","Rua Barão de Iguape, 209 - Liberdade");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("BENEFICÊNCIA PORTUGUESA","Rua Maestro Cardim, 769 - Bela Vista - Paraíso -São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("BOM CLIMA","Av. Mariana Ubaldina do Espírito Santo, 140 - Bom Clima - Guarulhos");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("BRASIL","Rua Cel. Fernando Prestes, 1.177 - Santo André - SP");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("CASA DE SAÚDE DOM PEDRO II","Av. Alcântara Machado, 60 - Brás - Mooca - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("CEMA HOSPITAL ESPECIALIZADO","Rua do Oratório, 1369 - Mooca - São Paulo");
+INSERT INTO `hospitais` (`nome`,`endereco`) VALUES ("CENTRAL","Rua Manoel Coelho, 845 - São Caetano do Sul - São Paulo");

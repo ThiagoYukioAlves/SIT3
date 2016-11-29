@@ -70,8 +70,8 @@
             <div>
                 <a style="display: inline" href='formulario_cadastro_hospital.jsp'>Cadastro Hospitais</a>
             </div>
-            <div>
-                <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
+            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+                <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
             </div>
             <div>
                 <a style="display: inline" href='formulario_cadastro_planos.jsp'>Cadastro Planos de Saúde</a>
