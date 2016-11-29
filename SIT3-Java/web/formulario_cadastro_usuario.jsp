@@ -4,7 +4,8 @@
     Author     : Gabriel
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<link type="text/css" rel="Stylesheet" href="style.css"/>
 <jsp:useBean id="planos" class="planosdesaude.PlanoDeSaude" scope="session"/>
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,7 @@
 
        Telefone:<br>
 
-       <input type="tel" name="telefone" required><br><br>
+       <input type="tel" name="telefone" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required><br><br>
 
        Endere&ccedil;o:<br>
 

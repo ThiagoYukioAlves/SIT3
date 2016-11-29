@@ -12,76 +12,86 @@ import database.*;
  * @author Gabriel
  */
 public class Usuario {
-    private String nome;
-    private String dataDeNascimento;
-    private String idPlano;
-    private String portadorDeDeficiencia;
-    private String telefone;
-    private String endereco;
-    private String username;
-    private String senha;
     
-    private DbManager db = new DbManager();
-    
-    // Funcoes set e get ---
-    
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    
-        
-    public void setDataDeNascimento(String dataDeNascimento){
-        this.dataDeNascimento = dataDeNascimento;
-    }
-    
-    public void setIdPlano(String idPlano){
-        this.idPlano = idPlano;
-    }
-    
-    public void setPortadorDeDeficiencia(String portadorDeDeficiencia){
-        this.portadorDeDeficiencia = portadorDeDeficiencia;
-    }
-    
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    
-    public void setEndereco(String endereco){
-        this.endereco = endereco;
-    }
-    
-    public void setUsername(String username){
-        this.username = username;
-    }
-    
-    public void setSenha(String senha){
-        this.senha = senha;
-    }
-    
-    public String getNome(){
-        return this.nome;
-    }
-    
-    public String getDataDeNascimento(){
-        return this.dataDeNascimento;
-    }
-    
-    public String getPortadorDeDeficiencia(){
-        return this.portadorDeDeficiencia;
-    }
-    
-    public String getIdPlano(){
-        return this.idPlano;
-    }
-    
-    // --- Fim de funcoes set e get
-    
-    public void salvarUsuario()
+    public boolean incluir(UsuarioDO usuario) throws Exception 
     {
-        String query = "INSERT INTO usuario (nome,id_plano,portador_de_deficiencia,data_de_nascimento,telefone,endereco,username,senha) VALUES" +
-                "('" + this.nome + "'," + this.idPlano + "," + this.portadorDeDeficiencia + ",'" + this.dataDeNascimento + "','"+ this.telefone +
-                "','" + this.endereco + "','" + this.username + "','" + this.senha + "')";
-        db.execute(query);
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.incluir(tr, usuario);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao de usuario.");
+        }
         
+        return false; // caso algo deu errado
     }
+    
+    public UsuarioDO selecionarPorId(String id) throws Exception
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioDO UserDO;
+            UsuarioData UserData = new UsuarioData();
+            UserDO = UserData.selecionarPorId(tr, id);
+            return UserDO;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de usuario por ID.");
+        }
+        
+        return null; // caso algo deu errado
+    }
+    
+    public UsuarioDO selecionarPorUsername(String username) throws Exception
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioDO UserDO;
+            UsuarioData UserData = new UsuarioData();
+            UserDO = UserData.selecionarPorUsername(tr, username);
+            return UserDO;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de usuario por username.");
+        }
+        
+        return null; // caso algo deu errado
+    }
+    
+    public boolean VerificarUsuarioSenha(UsuarioDO usuario)
+    {
+        
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            boolean resultado;
+            resultado = UserData.verificarUsuarioSenha(tr, usuario);
+            return resultado;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na  verificacao do login.");
+        }
+        
+        return false; // caso algo deu errado
+    } 
+    
+    public boolean VerificarExistenciaUsername(String username)
+    {
+        
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            boolean resultado;
+            resultado = UserData.verificarExistenciaUsername(tr, username);
+            return resultado;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na  verificacao da existencia do username.");
+        }
+        
+        return false; // caso algo deu errado
+    } 
+    
 }

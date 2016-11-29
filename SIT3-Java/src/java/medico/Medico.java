@@ -19,7 +19,7 @@ public class Medico {
     private String estado;
 
     
-    private DbManager db = new DbManager();
+    private DbTransaction db = new DbTransaction();
     
     // Funcoes set e get ---
     

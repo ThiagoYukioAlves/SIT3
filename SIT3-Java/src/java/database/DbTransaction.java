@@ -15,7 +15,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 
         
-public class DbManager {
+public class DbTransaction {
     
     private final String driverName = "org.sqlite.JDBC";
     private final String jdbc = "jdbc:mysql";
@@ -32,7 +32,7 @@ public class DbManager {
     public int getTimeout() { return timeout; }
     
     
-    public void execute(String str) 
+    public void execute(String str) throws Exception 
     {
                     // Setando parámetros para conectar com o servidor de banco de dados
                   
@@ -125,56 +125,7 @@ public class DbManager {
         return collection;
     }
        
-    public void LOL()  throws Exception{
-    
-            
-        // register the driver 
-        String sDriverName = "org.sqlite.JDBC";
- 
-        // now we set up a set of fairly basic string variables to use in the body of the code proper
-        String sTempDb = "hello.db";
-        String sJdbc = "jdbc:sqlite";
-        String sDbUrl = sJdbc + ":" + sTempDb;
-        // which will produce a legitimate Url for SqlLite JDBC :
-        // jdbc:sqlite:hello.db
-        int iTimeout = 30;
-       
-        
-          SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm,ss");//dd/MM/yyyy
-          java.util.Date now = new java.util.Date();
-          String strDate = sdfDate.format(now);
-        
-        
-        String sMakeTable = "CREATE TABLE IF NOT EXISTS dates(id numeric, date datetime)";
-        String sMakeInsert = "INSERT INTO dates VALUES(0,'" + strDate + " ')";
-        String sMakeSelect = "SELECT date from dates";
-        
- 
-        // create a database connection
-        Connection conn = DriverManager.getConnection(sDbUrl);
-        try {
-            Statement stmt = conn.createStatement();
-            try {
-                stmt.setQueryTimeout(iTimeout);
-                stmt.executeUpdate( sMakeTable );
-                stmt.executeUpdate( sMakeInsert );
-                ResultSet rs = stmt.executeQuery(sMakeSelect);
-                try {
-                    while(rs.next())
-                        {
-                            String sResult = rs.getString("date");
-                            System.out.println(sResult);
-                        }
-                } finally {
-                    try { rs.close(); } catch (Exception ignore) {}
-                }
-            } finally {
-                try { stmt.close(); } catch (Exception ignore) {}
-            }
-        } finally {
-            try { conn.close(); } catch (Exception ignore) {}
-        }
-    }
+
     
 }
     

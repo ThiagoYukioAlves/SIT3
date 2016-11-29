@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class MapaEmergencia {
     
     private DbCollection lista_hospitais = new DbCollection();
-    private DbManager db = new DbManager();
+    private DbTransaction db = new DbTransaction();
     
     public void ConsultaBanco(String q) throws Exception
     {
