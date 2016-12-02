@@ -33,13 +33,13 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`usuario` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '',
   `nome` VARCHAR(45) NOT NULL COMMENT '',
-  `id_plano` INT UNSIGNED NOT NULL COMMENT '',
   `portador_de_deficiencia` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '',
   `data_de_nascimento` DATE NULL COMMENT '',
   `telefone` INT UNSIGNED NULL COMMENT '',
   `privilegio` INT DEFAULT 0 COMMENT '',
   `endereco` VARCHAR(90) NULL COMMENT '',
   `senha` VARCHAR(45) NOT NULL COMMENT '',
+   `id_plano` INT UNSIGNED NOT NULL COMMENT '',
   `username` VARCHAR(45) NOT NULL COMMENT '',
   PRIMARY KEY (`id`)  COMMENT '')
 ENGINE = InnoDB;
