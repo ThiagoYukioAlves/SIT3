@@ -4,9 +4,11 @@
     Author     : Thiago
 --%>
 
-<jsp:useBean id="bd" class="database.DbManager" scope="session"/>
-<jsp:useBean id="medico" class="medico.Medico" scope="session"/>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<link type="text/css" rel="Stylesheet" href="style.css"/>
+<jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
+<jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
+<jsp:useBean id="lista_medico" class="database.DbCollection"></jsp:useBean>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +19,7 @@
     
   </head>
   <body>
-        <h1>Consulta de mÃ©dicos</h1>
+        <h1>Consulta de médicos</h1>
         <!--Pega toda tabela medicos no banco de dados-->
         <%DbCollection listaMedicos = medico.consultaMedicos();%>
         
