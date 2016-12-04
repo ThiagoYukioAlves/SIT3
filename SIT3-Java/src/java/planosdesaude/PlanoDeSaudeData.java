@@ -39,6 +39,18 @@ public class PlanoDeSaudeData {
         return "";
     }
     
+    public String obterIdPorNome(DbTransaction tr, String nome) throws Exception
+    {
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM hospitais WHERE nome = '" + nome + "'";
+        results = tr.query(query);
+        if (results.size() > 0) {
+            return results.getItem(0).getItem(0);
+        }
+        
+        return "";
+    }
+    
    public PlanoDeSaudeDO selecionarPorId(DbTransaction tr, String id) throws Exception
     {
         DbCollection results = new DbCollection();

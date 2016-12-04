@@ -28,20 +28,6 @@ public class PlanoDeSaude {
         
         return false; // caso algo deu errado
     }
-//    public boolean alterar(PlanoDeSaudeDO plano) throws Exception 
-//    {
-//        try {
-//            DbTransaction tr = new DbTransaction();
-//            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
-//            planoData.alternar(tr, plano);
-//            return true;
-//        }
-//        catch (Exception e) {
-//            System.out.println("Erro na inclusao do plano de saude.");
-//        }
-//
-//        return false; // caso algo deu errado
-//    }
      
     public String obterIdPorNome(String nome) throws Exception
     {
