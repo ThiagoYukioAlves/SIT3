@@ -13,12 +13,12 @@ import database.*;
  */
 public class Usuario {
     
-    public boolean alterarSenha(UsuarioDO usuarioDO, String senha) throws Exception 
+    public boolean incluir(UsuarioDO usuario) throws Exception 
     {
         try {
             DbTransaction tr = new DbTransaction();
             UsuarioData UserData = new UsuarioData();
-            UserData.alterarSenha(tr, usuarioDO, senha);
+            UserData.incluir(tr, usuario);
             return true;
         }
         catch (Exception e) {
@@ -28,12 +28,12 @@ public class Usuario {
         return false; // caso algo deu errado
     }
     
-    public boolean incluir(UsuarioDO usuario) throws Exception 
+    public boolean alterarSenha(UsuarioDO usuario,String senha) throws Exception 
     {
         try {
             DbTransaction tr = new DbTransaction();
             UsuarioData UserData = new UsuarioData();
-            UserData.incluir(tr, usuario);
+            UserData.alterarSenha(tr, usuario,senha);
             return true;
         }
         catch (Exception e) {

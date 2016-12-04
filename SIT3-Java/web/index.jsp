@@ -85,6 +85,9 @@
             <div>
                 <a style="display: inline" href='excluir_usuario.jsp'>Excluir Usuário</a>
             </div>
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
+            </div>
         </div>    
         
         <% 
@@ -100,6 +103,9 @@
             </div>
             <div>
                 <a style="display: inline" href='index.jsp#'>Alterar dados cadastrais</a>
+            </div>
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
             </div>
             
         </div>    
