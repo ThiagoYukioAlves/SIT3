@@ -6,7 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
+<jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
 <jsp:setProperty property="*" name="medico"/> 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +16,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% medico.salvarMedico(); %>
-        <h1>Seja bem-vindo, <%= medico.getNome() %>. Seu cadastro foi incluido com sucesso!</h1> <br>
+        <% medico.incluir(medicoDO); %>
+        <h1>Seja bem-vindo, <%= medicoDO.getNome() %>. Seu cadastro foi incluido com sucesso!</h1> <br>
         <h1><a href="index.jsp"> Voltar </a></h1> <br>
     </body>
 </html>

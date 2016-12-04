@@ -8,7 +8,7 @@
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
 <jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
-<jsp:useBean id="lista_medico" class="database.DbCollection"></jsp:useBean>
+<jsp:useBean id="lista_medicos" class="database.DbCollection"></jsp:useBean>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
   <body>
         <h1>Consulta de médicos</h1>
         <!--Pega toda tabela medicos no banco de dados-->
-        <%DbCollection listaMedicos = medico.consultaMedicos();%>
+        <%lista_medicos = medico.retornarTodosMedicos();%>
         
         <!--Cria uma tabela-->
         <table>
@@ -31,12 +31,15 @@
                 <th>Telefone</th>
                 <th>CRM</th>
             </tr>
+            
+            <%for(int i = 0; i < lista_medicos.size(); i++){%>
             <tr>   <!--Linhas com medico-->
-                <th>Medico</th>
-                <th>Especialidade</th>
-                <th>Telefone</th>
-                <th>CRM</th>
+                <th><%=lista_medicos.getItem(i).getItem(3)%></th>
+                <th><%=lista_medicos.getItem(i).getItem(2)%></th>
+                <th><%=lista_medicos.getItem(i).getItem(4)%></th>
+                <th><%=lista_medicos.getItem(i).getItem(1)%></th>
             </tr>
+            <%} %>
             
             
         </table>
