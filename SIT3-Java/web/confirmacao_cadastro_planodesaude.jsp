@@ -1,10 +1,10 @@
 <%-- 
-    Document   : confirmacao_cadastro_hospital
-    Created on : Nov 28, 2016, 9:20:28 PM
-    Author     : Gabriel
+    Document   : confirmacao_cadastro_planodesaude
+    Created on : 02/12/2016, 14:15:26
+    Author     : leo
 --%>
 
-            <%@page import="hospitais.Hospital"%>
+            <%@page import="planosdesaude.PlanoDeSaude"%>
             <%
                 if (session.getAttribute("privilegio") == null || !session.getAttribute("privilegio").equals("1")) {
             %>8u
@@ -19,9 +19,10 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 
-<jsp:useBean id="hospital" class="hospitais.Hospital"></jsp:useBean> 
-<jsp:useBean id="hospitalDO" class="hospitais.HospitalDO"></jsp:useBean> 
-<jsp:setProperty property="*" name="hospitalDO"/> 
+<jsp:useBean id="plano" class="planosdesaude.PlanoDeSaude"></jsp:useBean> 
+<jsp:useBean id="planoDO" class="planosdesaude.PlanoDeSaudeDO"></jsp:useBean> 
+<jsp:setProperty property="*" name="planoDO"/> 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,13 +31,14 @@
     </head>
     <body>
         
-        <h1><%= hospitalDO.getNome() %></h1>
-        nome_plano<% if (hospital.incluir(hospitalDO)) { %>
-        <h3>Hospital incluido com sucesso! </h3> 
-        <h3>         - <a href='relacao_hospital_plano.jsp?hospid=<%= hospital.obterIdPorNome(hospitalDO.getNome()) %>'>Incluir planos de saúde para esse hospital </a> </h3>
+        <h1><%= planoDO.getNome() %></h1>
+        <% if (plano.incluir(planoDO)) {%>
+        <h3>Plano de sa&uacute;de incluido com sucesso! </h3> 
+        <h3>         - <a href='relacao_hospital_plano.jsp?hospid=<%= plano.obterIdPorNome(planoDO.getNome()) %>'>Incluir planos de saúde para esse hospital </a> </h3>
         <h3>         - <a href='index.jsp'>Voltar</a> </h3>
         <% } %>
         <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
 
     </body>
 </html>
+
