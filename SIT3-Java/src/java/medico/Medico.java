@@ -42,6 +42,7 @@ public class Medico {
         return null; // caso algo deu errado
     }
     
+    
      public String obterIdPorNome(String nome) throws Exception
     {
         String id;
@@ -60,32 +61,18 @@ public class Medico {
         return null; // caso algo deu errado
     }
      
-     public DbCollection retornarHospitaisAceitamPlano(String pid) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            MedicoData medData = new MedicoData();
-            results = medData.retornarHospitaisAceitamPlano(tr, pid);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de meditais que aceitam  certo plano");
-        }
-        
-        return null; // caso algo deu errado
-    }
+   
      
-     public DbCollection retornarTodosHospitais() throws Exception { 
+     public DbCollection retornarTodosMedicos() throws Exception { 
          try {
             DbTransaction tr = new DbTransaction();
             DbCollection results;
             MedicoData medData = new MedicoData();
-            results = medData.retornarTodosHospitais(tr);
+            results = medData.retornarTodosMedicos(tr);
             return results;
         }
         catch (Exception e) {
-            System.out.println("Erro na recuperacao de todos os meditais");
+            System.out.println("Erro na recuperacao de todos os medicos");
         }
         
         return null; // caso algo deu errado

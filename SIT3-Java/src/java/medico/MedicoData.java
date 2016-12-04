@@ -14,8 +14,8 @@ import database.*;
 public class MedicoData {
     public void incluir(DbTransaction tr, MedicoDO med) throws Exception
     {
-        String query = "INSERT INTO medico (nome,CRM,telefone) VALUES ('" + med.getNome() + "','" + med.getEndereco() + "','" + 
-                med.getTelefone() + "')";
+        String query = "INSERT INTO medico (nome,CRM,telefone,especialidade) VALUES ('" + med.getNome() + "','" + med.getCRM() + "','" + 
+                med.getTelefone()+ "','" + med.getEspecialidade() +"')";
         tr.execute(query);
         
     }
@@ -32,7 +32,7 @@ public class MedicoData {
         return "";
     }
     
-    public DbCollection retornarTodosHospitais(DbTransaction tr) throws Exception { 
+    public DbCollection retornarTodosMedicos(DbTransaction tr) throws Exception { 
         DbCollection results = new DbCollection();
         String query = "SELECT * FROM medico";
         results = tr.query(query);
@@ -46,19 +46,14 @@ public class MedicoData {
         String query = "SELECT * FROM medico WHERE id = " + id;
         results = tr.query(query);
         MedicoDO med = new MedicoDO();
-        med.setNome(results.getItem(0).getItem(1));
-        med.setEndereco(results.getItem(0).getItem(2));
-        med.setTelefone(results.getItem(0).getItem(3));
+        med.setNome(results.getItem(0).getItem(3));
+        med.setCRM(results.getItem(0).getItem(1));
+        med.setTelefone(results.getItem(0).getItem(4));
+        med.setEspecialidade(results.getItem(0).getItem(2));
         
         return med;
     }
      
-    public DbCollection retornarHospitaisAceitamPlano(DbTransaction tr, String pid) throws Exception {
-         DbCollection results = new DbCollection();
-        String query = "SELECT * FROM medico WHERE id IN (SELECT medico_id FROM planos_de_saude_has_medico WHERE planos_de_saude_id = "+pid+")";
-        results = tr.query(query);
-        return results;
-     }
     
     public void remover(DbTransaction tr, String id) throws Exception
     {
