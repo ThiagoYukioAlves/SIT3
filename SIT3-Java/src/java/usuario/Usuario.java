@@ -13,6 +13,21 @@ import database.*;
  */
 public class Usuario {
     
+    public boolean alterarSenha(UsuarioDO usuarioDO, String senha) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.alterarSenha(tr, usuarioDO, senha);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao de usuario.");
+        }
+        
+        return false; // caso algo deu errado
+    }
+    
     public boolean incluir(UsuarioDO usuario) throws Exception 
     {
         try {

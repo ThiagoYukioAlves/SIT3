@@ -29,6 +29,10 @@ public class DbCollection {
         return entriesList.get(i);
     }
     
+    public void setItem(int i, String value){
+        return entriesList.set(i,value);
+    }
+    
     public int size()
     {
         return entriesList.size();
