@@ -33,7 +33,7 @@
      <fieldset>
        <legend>Dados:</legend>
        <br>Nome do plano de sa&uacute;de:<br>
-       <input type="text" name="nome" required><br><br>
+       <input type="text" name="nome_plano" required><br><br>
        
        <br><input type="submit" value="Continuar">
      </fieldset>

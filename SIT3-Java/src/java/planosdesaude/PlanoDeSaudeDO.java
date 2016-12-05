@@ -13,8 +13,8 @@ public class PlanoDeSaudeDO {
     
     private String nome;
     
-    public void setNome(String nome_plano){
-        this.nome = nome_plano;
+    public void setNome(String nome){
+        this.nome = nome;
     }
     
     public String getNome(){
