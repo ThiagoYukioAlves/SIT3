@@ -32,7 +32,7 @@
     <body>
         
         <h1><%= usuarioDO.getNome() %></h1>
-        <% if (usuario.alterarSenha(usuarioDO, usuarioDO.getsenhaNova())) { %>
+        <% if (usuario.alterarSenha(usuarioDO, usuarioDO.getSenha())) { %>
         <h3>Senha alterada com sucesso! </h3> 
         <h3>         - <a href='index.jsp'>Voltar</a> </h3>
         <% } %>

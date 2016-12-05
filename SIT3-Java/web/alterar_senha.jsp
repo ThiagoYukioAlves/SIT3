@@ -23,7 +23,9 @@
        <br>Senha antiga:<br>
        <input type="text" name="senha" required><br><br>
        <br>Senha nova:<br>
-       <input type="text" name="senhaNova" required><br><br>
+       <input type="text" name="senha" required><br><br>
+       <br>Insira novamente sua senha:<br>
+       <input type="text" name="senha" required><br><br>
        
        <br><input type="submit" value="Continuar">
      </fieldset>
