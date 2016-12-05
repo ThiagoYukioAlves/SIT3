@@ -34,7 +34,7 @@
         <h1><%= planoDO.getNome() %></h1>
         <% if (plano.incluir(planoDO)) {%>
         <h3>Plano de sa&uacute;de incluido com sucesso! </h3> 
-        <h3>         - <a href='relacao_plano_hospital.jsp?hospid=<%= plano.obterIdPorNome(planoDO.getNome()) %>'>Incluir hospitais para esse plano </a> </h3>
+        <h3>         - <a href='relacao_hospital_plano.jsp?hospid=<%= plano.obterIdPorNome(planoDO.getNome()) %>'>Incluir planos de saúde para esse hospital </a> </h3>
         <h3>         - <a href='index.jsp'>Voltar</a> </h3>
         <% } %>
         <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>

@@ -7,7 +7,7 @@
             <%@page import="hospitais.Hospital"%>
             <%
                 if (session.getAttribute("privilegio") == null || !session.getAttribute("privilegio").equals("1")) {
-            %>
+            %>8u
 
             <script>
                 alert("Você não tem permissão para acessar essa página!");
@@ -31,7 +31,7 @@
     <body>
         
         <h1><%= hospitalDO.getNome() %></h1>
-        <% if (hospital.incluir(hospitalDO)) { %>
+        nome_plano<% if (hospital.incluir(hospitalDO)) { %>
         <h3>Hospital incluido com sucesso! </h3> 
         <h3>         - <a href='relacao_hospital_plano.jsp?hospid=<%= hospital.obterIdPorNome(hospitalDO.getNome()) %>'>Incluir planos de saúde para esse hospital </a> </h3>
         <h3>         - <a href='index.jsp'>Voltar</a> </h3>
