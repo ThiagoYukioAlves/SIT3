@@ -4,10 +4,13 @@
     Author     : Thiago
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<link type="text/css" rel="Stylesheet" href="style.css"/>
+
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
 <jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
-<jsp:setProperty property="*" name="medico"/> 
+<jsp:setProperty property="*" name="medicoDO"/> 
 
 <!DOCTYPE html>
 <html>
