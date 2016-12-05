@@ -62,22 +62,28 @@
         <div>
             <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
             <div>
-                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro Médico</a>
             </div>
             <div>
-                <a style="display: inline" href='consulta_medicos.jsp'>Consulta médicos</a>
+                <a style="display: inline" href='consulta_medicos.jsp'>Consulta Médicos</a>
+            </div>
+            <div> 
+                <a style="display: inline" href='excluir_medico.jsp'>Excluir Médico</a>
             </div>
             <div>
                 <a style="display: inline" href='formulario_cadastro_hospital.jsp'>Cadastro Hospitais</a>
             </div>
-            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
-                <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+            <div>
+                <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
             </div>
             <div>
                 <a style="display: inline" href='formulario_cadastro_planodesaude.jsp'>Cadastro Planos de Saúde</a>
             </div>
             <div>
                 <a style="display: inline" href='consulta_planodesaude.jsp'>Consulta Planos de Saúde</a>
+            </div>
+            <div>
+                <a style="display: inline" href='excluir_planodesaude.jsp'>Excluir Planos de Saúde</a>
             </div>
         </div>    
         
