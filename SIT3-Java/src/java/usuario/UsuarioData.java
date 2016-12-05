@@ -90,13 +90,11 @@ public class UsuarioData {
     }
 
     
-    public boolean alterarSenha(DbTransaction tr, UsuarioDO usuario) throws Exception
+    public boolean alterarSenha(DbTransaction tr, UsuarioDO usuario, String senha) throws Exception
     {
         DbCollection results = new DbCollection();
-        String query = "UPDATE usuario SET senha = '"+usuario.getsenhaNova()+"' WHERE username = '"+usuario.getUsername()+"'";
+        String query = "UPDATE usuario SET senha = '"+senha+"' WHERE username = '"+usuario.getUsername()+"'";
         results = tr.query(query);
-        usuario.setSenha(usuario.getsenhaNova());
-        System.out.println("Senha depois de mudar:"+usuario.getSenha());
-        return true;
+        return usuario.getSenha().equals(senha);
     }
 }

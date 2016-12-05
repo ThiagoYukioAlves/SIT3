@@ -19,15 +19,6 @@ public class UsuarioDO {
     private String username;
     private String senha;
     private String privilegio; 
-    private String senhaNova;
-    
-    public void setsenhaNova(String senhaNova){
-        this.senhaNova = senhaNova;
-    }
-    
-    public String getsenhaNova(){
-        return this.senhaNova;
-    }
     
     public void setNome(String nome){
         this.nome = nome;
