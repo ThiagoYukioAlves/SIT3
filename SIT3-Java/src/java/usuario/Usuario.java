@@ -33,7 +33,7 @@ public class Usuario {
         try {
             DbTransaction tr = new DbTransaction();
             UsuarioData UserData = new UsuarioData();
-            UserData.alterarSenha(tr, usuario,senha);
+            UserData.alterarSenha(tr, usuario);
             return true;
         }
         catch (Exception e) {
