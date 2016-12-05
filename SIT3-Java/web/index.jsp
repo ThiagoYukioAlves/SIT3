@@ -83,7 +83,7 @@
                 <a style="display: inline" href='consulta_planodesaude.jsp'>Consulta Planos de Saúde</a>
             </div>
             <div>
-                <a style="display: inline" href='excluir_planodesaude.jsp'>Excluir Planos de Saúde</a>
+                <a style="display: inline" href='excluir_usuario.jsp'>Excluir Usuário</a>
             </div>
         </div>    
         
