@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="plano" class="planosdesaude.PlanoDeSaude" scope="session"/>
 <jsp:useBean id="planoDO" class="planosdesaude.PlanoDeSaudeDO" scope="session"/>
+<jsp:useBean id="planoDODb" class="database.DbCollection"></jsp:useBean>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,7 @@
         
         <% } else { 
          
-         planoDO = plano.selecionarPorId(String.valueOf(session.getAttribute("idPlano")));
+         planoDODb = plano.selecionarPorId(String.valueOf(session.getAttribute("idPlano")));
         %> 
         <h3>Seja bem vindo, <%= session.getAttribute("nome") %>      (<a href='index.jsp?action=logout'> Logout </a>)</h3>
         <h3>Plano de saúde: <%= planoDO.getNome() %></h3>
@@ -62,22 +63,31 @@
         <div>
             <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
             <div>
-                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+                <a style="display: inline" href='formulario_cadastro_medico.jsp'>Cadastro Médico</a>
             </div>
             <div>
-                <a style="display: inline" href='consulta_medicos.jsp'>Consulta médicos</a>
+                <a style="display: inline" href='consulta_medicos.jsp'>Consulta Médicos</a>
+            </div>
+            <div> 
+                <a style="display: inline" href='excluir_medico.jsp'>Excluir Médico</a>
             </div>
             <div>
                 <a style="display: inline" href='formulario_cadastro_hospital.jsp'>Cadastro Hospitais</a>
             </div>
-            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
-                <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
+            <div>
+                <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
             </div>
             <div>
-                <a style="display: inline" href='formulario_cadastro_planodesaude.jsp'>Cadastro Planos de Saúde</a>
+                <a style="display: inline" href='formulario_cadastro_planos.jsp'>Cadastro Planos de Saúde</a>
             </div>
             <div>
                 <a style="display: inline" href='consulta_planodesaude.jsp'>Consulta Planos de Saúde</a>
+            </div>
+            <div>
+                <a style="display: inline" href='excluir_usuario.jsp'>Excluir Usuário</a>
+            </div>
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
             </div>
         </div>    
         
@@ -94,6 +104,9 @@
             </div>
             <div>
                 <a style="display: inline" href='index.jsp#'>Alterar dados cadastrais</a>
+            </div>
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
             </div>
             
         </div>    
