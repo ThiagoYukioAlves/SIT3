@@ -41,7 +41,7 @@
        int i = 0;
        while (i < lista_medico.size()) {
            %>
-           <h3><%= lista_medico.getItem(i).getItem(1)%> - <a href="consulta_medicos.jsp?action=remove&medid=<%=lista_medico.getItem(i).getItem(0)%>">[Excluir]</a></h3>
+           <h3><%= lista_medico.getItem(i).getItem(1)%> - <%= lista_medico.getItem(i).getItem(3)%> - <a href="excluir_medico.jsp?action=remove&medid=<%=lista_medico.getItem(i).getItem(0)%>">[Excluir]</a></h3>
            <%
            i++;
        }

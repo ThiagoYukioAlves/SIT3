@@ -77,7 +77,7 @@
                 <a style="display: inline" href='consulta_hospitais.jsp'>Consulta Hospitais</a>
             </div>
             <div>
-                <a style="display: inline" href='formulario_cadastro_planos.jsp'>Cadastro Planos de Saúde</a>
+                <a style="display: inline" href='formulario_cadastro_planodesaude.jsp'>Cadastro Planos de Saúde</a>
             </div>
             <div>
                 <a style="display: inline" href='consulta_planodesaude.jsp'>Consulta Planos de Saúde</a>

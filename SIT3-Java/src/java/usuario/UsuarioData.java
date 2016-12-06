@@ -97,4 +97,18 @@ public class UsuarioData {
         results = tr.query(query);
         return usuario.getSenha().equals(senha);
     }
+    
+        public DbCollection retornarTodosUsuarios(DbTransaction tr) throws Exception { 
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM usuario";
+        results = tr.query(query);
+        return results;
+    }
+            
+        public void remover(DbTransaction tr, String id) throws Exception
+    {
+        String query = "DELETE FROM usuario WHERE id = "+id;
+        tr.execute(query);
+    }
+        
 }
