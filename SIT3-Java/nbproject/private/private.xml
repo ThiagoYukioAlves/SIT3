@@ -3,16 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/confirmacao_cadastro_hospital.jsp</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/src/java/hospitais/Hospital.java</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/src/java/hospitais/HospitalData.java</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/formulario_cadastro_planodesaude.jsp</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/formulario_cadastro_hospital.jsp</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/src/java/planosdesaude/PlanoDeSaude.java</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/src/java/planosdesaude/PlanoDeSaudeData.java</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/src/java/planosdesaude/PlanoDeSaudeDO.java</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/confirmacao_cadastro_planodesaude.jsp</file>
-            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/index.jsp</file>
+            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/confirmacao_cadastro_usuario.jsp</file>
+            <file>file:/home/leo/NetBeansProjects/SIT/SIT3/SIT3-Java/web/relacao_plano_hospital.jsp</file>
         </group>
     </open-files>
 </project-private>
