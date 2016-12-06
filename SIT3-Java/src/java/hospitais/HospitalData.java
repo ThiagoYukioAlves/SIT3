@@ -62,6 +62,12 @@ public class HospitalData {
         results = tr.query(query);
         return results;
      }
+    public DbCollection retornarHospitaisNaoAceitamPlano(DbTransaction tr, String pid) throws Exception {
+         DbCollection results = new DbCollection();
+        String query = "SELECT * FROM hospitais WHERE id NOT IN (SELECT hospitais_id FROM planos_de_saude_has_hospitais WHERE planos_de_saude_id = "+pid+")";
+        results = tr.query(query);
+        return results;
+     }
     
     public void remover(DbTransaction tr, String id) throws Exception
     {

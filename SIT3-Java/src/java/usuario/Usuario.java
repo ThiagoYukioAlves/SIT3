@@ -108,34 +108,26 @@ public class Usuario {
         
         return false; // caso algo deu errado
     } 
-    
-         public DbCollection retornarTodosUsuarios() throws Exception { 
-         try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            UsuarioData UserData = new UsuarioData();
-            results = UserData.retornarTodosUsuarios(tr);
-            return results;
+    public boolean editar(String id, String nome, String telefone, String data) throws Exception {
+           try {
+                DbTransaction tr = new DbTransaction();
+                UsuarioData usuarioData = new UsuarioData();
+                usuarioData.editar(tr, id,nome,telefone, data);
+                return true;
+            }
+            catch (Exception e) {
+                System.out.println("Erro na inclusao de relacao plano-hospital");
+            }
+
+            return false; // caso algo deu erradoplanoDO = plano.selecionarPorId(request.getParameter("planoid"
         }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de todos os medicos");
-        }
+     public String PegaIdPorUsername(String username) throws Exception{
         
-        return null; // caso algo deu errado
+                DbTransaction tr = new DbTransaction();
+                UsuarioData usuarioData = new UsuarioData();
+                String id;
+                id = usuarioData.PegaIdPorUsername(tr, username);
+                return id;
+  
      }
-     
-     public boolean remover(String id) throws Exception {
-          try {
-            DbTransaction tr = new DbTransaction();
-            UsuarioData UserData = new UsuarioData();
-            UserData.remover(tr, id);
-            return true;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na remocao de medico.");
-        }
-        
-        return false; // caso algo deu errado
-     }
-    
 }

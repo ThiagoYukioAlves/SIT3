@@ -97,18 +97,17 @@ public class UsuarioData {
         results = tr.query(query);
         return usuario.getSenha().equals(senha);
     }
-    
-        public DbCollection retornarTodosUsuarios(DbTransaction tr) throws Exception { 
-        DbCollection results = new DbCollection();
-        String query = "SELECT * FROM usuario";
-        results = tr.query(query);
-        return results;
-    }
-            
-        public void remover(DbTransaction tr, String id) throws Exception
+    public void editar(DbTransaction tr, String id, String nome, String telefone, String data) throws Exception
     {
-        String query = "DELETE FROM usuario WHERE id = "+id;
+        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', data_de_nascimento = '"+ data + "' WHERE id = " + id;
         tr.execute(query);
     }
-        
+    public String PegaIdPorUsername(DbTransaction tr, String username) throws Exception{
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM usuario WHERE username = '" + username+ "'";
+        results = tr.query(query);
+        String id;
+        id = results.getItem(0).getItem(0);
+        return id;
+    }
 }

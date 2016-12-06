@@ -40,10 +40,13 @@
        
        if (request.getParameter("action")!=null && request.getParameter("action").equals("add")){
            plano.incluirRelacaoHospitalPlano(request.getParameter("hospid"), request.getParameter("planoid"));
+           listaHospitaisAceitos = hospital.retornarHospitaisAceitamPlano(request.getParameter("planoid"));
+           listaHospitaisNaoAceitos = hospital.retornarHospitaisNaoAceitamPlano(request.getParameter("planoid"));
            
        } else if (request.getParameter("action")!=null && request.getParameter("action").equals("delete")) {
            plano.removerRelacaoHospitalPlano(request.getParameter("hospid"), request.getParameter("planoid"));
-           
+           listaHospitaisAceitos = hospital.retornarHospitaisAceitamPlano(request.getParameter("planoid"));
+           listaHospitaisNaoAceitos = hospital.retornarHospitaisNaoAceitamPlano(request.getParameter("planoid"));
        }
     %>
     
