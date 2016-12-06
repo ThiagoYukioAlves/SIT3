@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hospitais Próximos</h1>
+
+<div id="map" style="width:100%;height:500px"></div>
+
+
+<script>
+var map;
+var latlon = {lat: -23.489, lng: -46.6388};
+
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: latlon, 
+    zoom: 10
+  }
+  map = new google.maps.Map(mapCanvas, mapOptions);
+}
+
+function recenter(latitude, longitude){
+	latlon = {lat: latitude, lng: longitude};
+	var marker = new google.maps.Marker({position: latlon});
+	marker.setMap(map);
+	map.panTo(latlon);
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+
+<table>
+  <tr>
+    <th>Hospital</th>
+    <th>Contato</th>
+    <th>Localização (Google Maps)</th>
+    <th>Caminho da sua Localização</th>
+  </tr>
+  <tr>
+    <td>Albert Einstein</td>
+    <td>190</td>
+    <td><button onclick="recenter(-23.479, -46.6378)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+  <tr>
+    <td>Sírio Libanês</td>
+    <td>191</td>
+    <td><button onclick="recenter(-23.499, -46.6398)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+  <tr>
+    <td>Hospital Universitário</td>
+    <td>192</td>
+    <td><button onclick="recenter(-23.479, -46.6478)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+  <tr>
+    <td>Santa Casa</td>
+    <td>193</td>
+    <td><button onclick="recenter(-23.489, -46.6398)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+  <tr>
+    <td>Beneficência Portuguesa</td>
+    <td>194</td>
+    <td><button onclick="recenter(-23.499, -46.6388)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+  <tr>
+    <td>São Camilo</td>
+    <td>195</td>
+    <td><button onclick="recenter(-23.579, -46.6388)">Localização</button></td>
+    <td><a href="">Ir para o Google Maps</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Exercicio Javascript</title>
+</head>
+
+<body>
+	<!-- Essa parte é basicamente o "import" de uma biblioteca de CSS que esta na outra pasta (no final vai ser importado o script Javascript -->
+	<link rel="stylesheet" href="CSS/style.css">
+
+
+	<!--Elemento para ficar no cabeçalho (classe 'header' definida no arquivo css)-->
+	<div class="header">Exercicio para Treinar Javascript</div>
+
+	<!--elemento que vai ter as caixas de texto-->
+	<div class="colEsquerda">
+		<form>
+			<legend>Calcule a Rota!</legend><br>
+			Origem: <br>   <!--O elemento br é um enter-->
+			<!--Vamos dar um id unico para esses elementos para pegar com o Javascript depois-->
+			<input id="caixaOrigem" type="text"> <br><br><br>
+			Destino: <br>
+			<input id="caixaDestino" type="text"> <br><br>
+			<input id="botao" type="button" value="Calcular!">
+			<br><br>
+			<input type="text" list="languages" placeholder="Busca!">
+			<datalist id="languages">
+			  <option value="HTML">
+			  <option value="CSS">
+			  <option value="JavaScript">
+			  <option value="Java">
+			  <option value="Ruby">
+			  <option value="PHP">
+			  <option value="Go">
+			  <option value="Erlang">
+			  <option value="Python">
+			  <option value="C">
+			  <option value="C#">
+			  <option value="C++">
+			</datalist>
+		</form>
+	</div>
+
+	<!--Elemento que vai ter uma lista nao-ordenada (ul) com os enderecos pesquisados-->
+	<div class="colMeio">
+		<p>Enderecos procurados:</p>
+		<ul id="historico">
+		</ul>
+	</div>
+
+	<!--Caixa que vai ter o Google Maps-->
+	<div class="colDireita">
+		<p>Resultado da Busca:</p>
+		<div id="mapa"> Implementar no futuro </div>
+	</div>
+
+	<!--Script do Google maps (precisa colocar a Key)-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+	<!--Script que a gente vai escrever-->
+	<script type="text/javascript" src="JS/app.js"></script>
+</body>
+</html>

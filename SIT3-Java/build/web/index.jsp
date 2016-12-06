@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="plano" class="planosdesaude.PlanoDeSaude" scope="session"/>
 <jsp:useBean id="planoDO" class="planosdesaude.PlanoDeSaudeDO" scope="session"/>
+<jsp:useBean id="planoDODb" class="database.DbCollection"></jsp:useBean>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,7 @@
         
         <% } else { 
          
-         planoDO = plano.selecionarPorId(String.valueOf(session.getAttribute("idPlano")));
+         planoDODb = plano.selecionarPorId(String.valueOf(session.getAttribute("idPlano")));
         %> 
         <h3>Seja bem vindo, <%= session.getAttribute("nome") %>      (<a href='index.jsp?action=logout'> Logout </a>)</h3>
         <h3>Plano de saúde: <%= planoDO.getNome() %></h3>
