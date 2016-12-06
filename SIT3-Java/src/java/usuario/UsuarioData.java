@@ -60,6 +60,23 @@ public class UsuarioData {
         return usuario;
     }
     
+        public DbCollection retornarAgendaUsuario(DbTransaction tr, String pid) throws Exception {
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM agenda_medicos WHERE id_usuario = "+pid+"";
+        results = tr.query(query);
+        return results;
+     }
+    
+    
+    public DbCollection SelecionarIdUsuario(DbTransaction tr, String user) throws Exception
+    {
+        DbCollection results = new DbCollection();
+        String query = "SELECT id FROM usuario WHERE username = '" +user+ "';";
+        results = tr.query(query);
+        return results;
+    }
+
+    
     public boolean verificarUsuarioSenha(DbTransaction tr, UsuarioDO user) throws Exception
     {
         DbCollection results = new DbCollection();
@@ -88,27 +105,12 @@ public class UsuarioData {
             return true;
         }
     }
-
     
-    public boolean alterarSenha(DbTransaction tr, UsuarioDO usuario, String senha) throws Exception
+    public void desmarcarConsulta(DbTransaction tr, String id_usuario, String id_consulta) throws Exception
     {
-        DbCollection results = new DbCollection();
-        String query = "UPDATE usuario SET senha = '"+senha+"' WHERE username = '"+usuario.getUsername()+"'";
-        results = tr.query(query);
-        return usuario.getSenha().equals(senha);
-    }
-    
-        public DbCollection retornarTodosUsuarios(DbTransaction tr) throws Exception { 
-        DbCollection results = new DbCollection();
-        String query = "SELECT * FROM usuario";
-        results = tr.query(query);
-        return results;
-    }
-            
-        public void remover(DbTransaction tr, String id) throws Exception
-    {
-        String query = "DELETE FROM usuario WHERE id = "+id;
+        String query = "UPDATE agenda_medicos SET id_usuario = 0 WHERE id_consulta = "+id_consulta+"" ;
         tr.execute(query);
-    }
         
+    }
+    
 }

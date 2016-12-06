@@ -29,10 +29,6 @@ public class DbEntry {
        return rows.get(i);
    }
    
-   public String setItem(int i, String value) {
-       return rows.set(i,value);
-   }
-   
    public void print()
    {
       Iterator<String> iter;

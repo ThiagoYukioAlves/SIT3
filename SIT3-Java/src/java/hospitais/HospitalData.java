@@ -62,6 +62,13 @@ public class HospitalData {
         results = tr.query(query);
         return results;
      }
+  
+    public DbCollection retornarHospitaisComMedicos(DbTransaction tr, String pid) throws Exception {
+         DbCollection results = new DbCollection();
+        String query = "SELECT * FROM hospitais WHERE id IN (SELECT id_hospital FROM medico_trabalha_em_hosp WHERE id_medico = "+pid+")";
+        results = tr.query(query);
+        return results;
+     }
     
     public void remover(DbTransaction tr, String id) throws Exception
     {

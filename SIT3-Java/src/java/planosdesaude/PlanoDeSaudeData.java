@@ -20,24 +20,6 @@ public class PlanoDeSaudeData {
         String query = "INSERT INTO planos_de_saude (nome_plano) VALUES ('" + plano.getNome() + "')";
         tr.execute(query);
     }
-//    
-//    public void alternar(DbTransaction tr, PlanoDeSaudeDO plano) throws Exception
-//    {
-//        String query = "update planos_de_saude set nome_plano='toscao' where id =9";
-//        tr.execute(query);
-//    }
-    
-    public String obterIdPorNome(DbTransaction tr, String nome) throws Exception
-    {
-        DbCollection results = new DbCollection();
-        String query = "SELECT * FROM hospitais WHERE nome = '" + nome + "'";
-        results = tr.query(query);
-        if (results.size() > 0) {
-            return results.getItem(0).getItem(0);
-        }
-        
-        return "";
-    }
     
    public PlanoDeSaudeDO selecionarPorId(DbTransaction tr, String id) throws Exception
     {
