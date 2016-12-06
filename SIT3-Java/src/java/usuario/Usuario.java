@@ -109,4 +109,33 @@ public class Usuario {
         return false; // caso algo deu errado
     } 
     
+         public DbCollection retornarTodosUsuarios() throws Exception { 
+         try {
+            DbTransaction tr = new DbTransaction();
+            DbCollection results;
+            UsuarioData UserData = new UsuarioData();
+            results = UserData.retornarTodosUsuarios(tr);
+            return results;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de todos os medicos");
+        }
+        
+        return null; // caso algo deu errado
+     }
+     
+     public boolean remover(String id) throws Exception {
+          try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.remover(tr, id);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na remocao de medico.");
+        }
+        
+        return false; // caso algo deu errado
+     }
+    
 }

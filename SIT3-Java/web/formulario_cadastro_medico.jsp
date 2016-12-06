@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link type="text/css" rel="Stylesheet" href="style.css"/>
 <!DOCTYPE html>
 <html>
 <body>
