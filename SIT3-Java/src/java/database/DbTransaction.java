@@ -7,7 +7,6 @@ package database;
 
 /**
  *
- * Classe que define a conexao do JSP com o SQL
  * @author Gabriel
  */
 
@@ -35,7 +34,7 @@ public class DbTransaction {
     
     public void execute(String str) throws Exception 
     {
-                    // Setando parametros para conectar com o servidor de banco de dados
+                    // Setando parámetros para conectar com o servidor de banco de dados
                   
                Statement statement = null;
 
@@ -125,4 +124,9 @@ public class DbTransaction {
        
         return collection;
     }
+       
+
+    
 }
+    
+ 

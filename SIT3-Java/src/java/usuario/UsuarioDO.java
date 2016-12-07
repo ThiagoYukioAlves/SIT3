@@ -19,6 +19,13 @@ public class UsuarioDO {
     private String username;
     private String senha;
     private String privilegio; 
+    private String senhaNova;
+    private String email;
+  
+    
+    public void setEmail(String email){
+        this.email = email;
+    }
     
     public void setNome(String nome){
         this.nome = nome;
@@ -57,6 +64,10 @@ public class UsuarioDO {
         this.privilegio = privilegio;
     }
     
+    public void setSenhaNova(String senha){
+        this.senhaNova = senha;
+    }
+    
     public String getNome(){
         return this.nome;
     }
@@ -91,6 +102,14 @@ public class UsuarioDO {
     
     public String getPrivilegio(){
         return this.privilegio;
+    }
+    
+    public String getSenhaNova(){
+        return this.senhaNova;
+    }
+    
+    public String getEmail(){
+        return this.email;
     }
     
 }
