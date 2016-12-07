@@ -78,6 +78,37 @@ public class Hospital {
         
         return null; // caso algo deu errado
     }
+     public DbCollection retornarHospitaisNaoAceitamPlano(String pid) throws Exception
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            DbCollection results;
+            HospitalData hospData = new HospitalData();
+            results = hospData.retornarHospitaisNaoAceitamPlano(tr, pid);
+            return results;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de hospitais que aceitam  certo plano");
+        }
+        
+        return null; // caso algo deu errado
+    } 
+     
+    public DbCollection retornarHospitaisComMedicos(String pid) throws Exception
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            DbCollection results;
+            HospitalData hospData = new HospitalData();
+            results = hospData.retornarHospitaisComMedicos(tr, pid);
+            return results;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de hospitais que aceitam  certo plano");
+        }
+        
+        return null; // caso algo deu errado
+    }
      
      public DbCollection retornarTodosHospitais() throws Exception { 
          try {
@@ -107,5 +138,18 @@ public class Hospital {
         
         return false; // caso algo deu errado
      }
+     public boolean editar(String hid, String nome, String telefone, String endereco) throws Exception {
+           try {
+                DbTransaction tr = new DbTransaction();
+                HospitalData hospData = new HospitalData();
+                hospData.editar(tr, hid, nome, telefone, endereco);
+                return true;
+            }
+            catch (Exception e) {
+                System.out.println("Erro na inclusao de relacao plano-hospital");
+            }
+
+            return false; // caso algo deu erradoplanoDO = plano.selecionarPorId(request.getParameter("planoid"
+        }
     
 }
