@@ -108,11 +108,11 @@ public class Usuario {
         
         return false; // caso algo deu errado
     } 
-    public boolean editar(String id, String nome, String telefone, String data) throws Exception {
+    public boolean editar(String id, String nome, String telefone, String data, String idPlano, String privilegio, String portador, String endereco, String username, String senha) throws Exception {
            try {
                 DbTransaction tr = new DbTransaction();
                 UsuarioData usuarioData = new UsuarioData();
-                usuarioData.editar(tr, id,nome,telefone, data);
+                usuarioData.editar(tr, id,nome,telefone, data, idPlano, privilegio, portador, endereco, username, senha);
                 return true;
             }
             catch (Exception e) {

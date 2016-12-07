@@ -37,7 +37,7 @@
        while (i < lista_hospitais.size()) {
            %>
            <h3><%= lista_hospitais.getItem(i).getItem(1)%> - <a href="relacao_hospital_plano.jsp?hospid=<%=lista_hospitais.getItem(i).getItem(0)%>">[Planos]</a>
-           <a href="consulta_hospitais.jsp?action=remove&hospid=<%=lista_hospitais.getItem(i).getItem(0)%>">[Excluir]</a></h3>
+           <a href="consulta_hospitais.jsp?action=remove&hospid=<%=lista_hospitais.getItem(i).getItem(0)%>">[Excluir]</a><a href='editar_hospital.jsp?hospid=<%=lista_hospitais.getItem(i).getItem(0)%>&action=edit'>[Editar]</a></h3>
            <%
            i++;
        }

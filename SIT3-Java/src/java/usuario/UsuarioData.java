@@ -97,10 +97,15 @@ public class UsuarioData {
         results = tr.query(query);
         return usuario.getSenha().equals(senha);
     }
-    public void editar(DbTransaction tr, String id, String nome, String telefone, String data) throws Exception
+    public void editar(DbTransaction tr, String id, String nome, String telefone, String data, String idPlano, String privilegio, String portador, String endereco, String username, String senha) throws Exception
     {
-        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', data_de_nascimento = '"+ data + "' WHERE id = " + id;
+        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', data_de_nascimento = '"+ data + "', id_plano = '"+ idPlano + "', privilegio = '" + privilegio + "', portador_de_deficiencia = '" + portador + "', endereco = '" + endereco + "' WHERE id = " + id;
         tr.execute(query);
+    }
+    public String teste(String id, String nome, String telefone, String data, String idPlano, String privilegio, String portador, String endereco, String username, String senha) throws Exception
+    {
+        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', id_plano = '"+ idPlano + "', data_de_nascimento = '" + data + "', portador_de_deficiencia = '" + portador + "', endereco = '" + endereco + "' WHERE id = " + id;
+        return query;
     }
     public String PegaIdPorUsername(DbTransaction tr, String username) throws Exception{
         DbCollection results = new DbCollection();

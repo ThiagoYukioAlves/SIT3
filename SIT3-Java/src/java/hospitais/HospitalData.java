@@ -74,6 +74,11 @@ public class HospitalData {
         String query = "DELETE FROM hospitais WHERE id = "+id;
         tr.execute(query);
     }
+    public void editar(DbTransaction tr, String hospital, String nome, String telefone, String endereco) throws Exception
+    {
+        String query = "UPDATE hospitais SET nome = '" + nome + "', telefone = '"+telefone+"', endereco = '"+endereco+"' WHERE id = '" + hospital+"'";
+        tr.execute(query);
+    }
      
     
 }

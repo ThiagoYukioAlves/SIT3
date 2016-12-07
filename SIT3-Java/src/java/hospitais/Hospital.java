@@ -122,5 +122,18 @@ public class Hospital {
         
         return false; // caso algo deu errado
      }
+     public boolean editar(String hid, String nome, String telefone, String endereco) throws Exception {
+           try {
+                DbTransaction tr = new DbTransaction();
+                HospitalData hospData = new HospitalData();
+                hospData.editar(tr, hid, nome, telefone, endereco);
+                return true;
+            }
+            catch (Exception e) {
+                System.out.println("Erro na inclusao de relacao plano-hospital");
+            }
+
+            return false; // caso algo deu erradoplanoDO = plano.selecionarPorId(request.getParameter("planoid"
+        }
     
 }
