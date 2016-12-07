@@ -5,14 +5,15 @@
 --%>
 <jsp:useBean id="planos" class="planosdesaude.PlanoDeSaude"></jsp:useBean> 
 <jsp:useBean id="planoEdit" class="planosdesaude.PlanoDeSaudeDO"></jsp:useBean> 
-
-
+<jsp:useBean id="planosDO" class="planosdesaude.PlanoDeSaudeDO"></jsp:useBean> 
+<jsp:useBean id="planoedit" class="database.DbCollection"></jsp:useBean>
+    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <% 
     if(request.getParameter("planoid")!= null){
-    planoEdit = planos.selecionarPorId(request.getParameter("planoid"));
+    planoedit = planos.selecionarPorId(request.getParameter("planoid"));
 
     }
 
@@ -26,8 +27,8 @@
     <body>
         <h1>Editar plano</h1> <br>
         <h2>Infos do plano:</h2> <br>
-        <h3>Nome -<%=planoEdit.getNome()%> </h3>
- 
+        <h3>Nome -<%=planoedit.getItem(0).getItem(1)%> </h3>
+        
      <form method="post" action="confirmacao_edicao_planodesaude.jsp?planoid=<%=request.getParameter("planoid")%>&action=edit">
      <fieldset>
        <legend>Alterar:</legend>

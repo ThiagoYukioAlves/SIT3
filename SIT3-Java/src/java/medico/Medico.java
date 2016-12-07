@@ -42,6 +42,7 @@ public class Medico {
         return null; // caso algo deu errado
     }
     
+    
      public String obterIdPorNome(String nome) throws Exception
     {
         String id;
@@ -60,63 +61,18 @@ public class Medico {
         return null; // caso algo deu errado
     }
      
-     public DbCollection retornarHospitaisAceitamPlano(String pid) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            MedicoData medData = new MedicoData();
-            results = medData.retornarHospitaisAceitamPlano(tr, pid);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de meditais que aceitam  certo plano");
-        }
-        
-        return null; // caso algo deu errado
-    }
-    
-    public boolean marcarConsulta(String id_usuario, String id_consulta) throws Exception 
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            MedicoData medData = new MedicoData();
-            medData.marcarConsulta(tr, id_usuario, id_consulta);
-            return true;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na inclusao de medico.");
-        }
-        
-        return false; // caso algo deu errado
-    }
+   
      
-    public DbCollection retornarAgendaMedico(String pid) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            MedicoData medData = new MedicoData();
-            results = medData.retornarAgendaMedico(tr, pid);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de meditais que aceitam  certo plano");
-        }
-        
-        return null; // caso algo deu errado
-    }
-     
-     public DbCollection retornarTodosHospitais() throws Exception { 
+     public DbCollection retornarTodosMedicos() throws Exception { 
          try {
             DbTransaction tr = new DbTransaction();
             DbCollection results;
             MedicoData medData = new MedicoData();
-            results = medData.retornarTodosHospitais(tr);
+            results = medData.retornarTodosMedicos(tr);
             return results;
         }
         catch (Exception e) {
-            System.out.println("Erro na recuperacao de todos os meditais");
+            System.out.println("Erro na recuperacao de todos os medicos");
         }
         
         return null; // caso algo deu errado
@@ -135,4 +91,45 @@ public class Medico {
         
         return false; // caso algo deu errado
      }
+
+     public MedicoDO selecionarPorCRM(String CRM) throws Exception
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            MedicoDO MedicoDO;
+            MedicoData MedicoData = new MedicoData();
+            MedicoDO = MedicoData.selecionarPorCRM(tr, CRM);
+            return MedicoDO;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de usuario por username.");
+        }
+        
+        return null; // caso algo deu errado
+    }
+     
+public boolean editar(String id, String nome, String telefone, String CRM, String especialidade) throws Exception {
+           try {
+                DbTransaction tr = new DbTransaction();
+                MedicoData medicoData = new MedicoData();
+                medicoData.editar(tr, id, nome, telefone, CRM, especialidade);
+                return true;
+            }
+            catch (Exception e) {
+                System.out.println("Erro na edicao de medico");
+            }
+
+            return false; // caso algo deu erradoplanoDO = plano.selecionarPorId(request.getParameter("planoid"
+        }
+     public String PegaIdPorCRM(String CRM) throws Exception{
+        
+                DbTransaction tr = new DbTransaction();
+                MedicoData medicoData = new MedicoData();
+                String id;
+                id = medicoData.PegaIdPorCRM(tr, CRM);
+                return id;
+  
+     }
+
+
 }
