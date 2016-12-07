@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="plano" class="planosdesaude.PlanoDeSaude" scope="session"/>
 <jsp:useBean id="planoDO" class="planosdesaude.PlanoDeSaudeDO" scope="session"/>
+<jsp:useBean id="planoDODb" class="database.DbCollection"></jsp:useBean>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 <!DOCTYPE html>
 <html>
@@ -100,6 +101,9 @@
             </div>
             <div>
                 <a style="display: inline" href='desmarcar_consulta.jsp#'>Desmarcar Consultas</a>
+            </div>
+            <div>
+                <a style="display: inline" href='editar_usuario.jsp?username=<%=session.getAttribute("username")%>'>Editar Informações</a>
             </div>
             
         </div>    

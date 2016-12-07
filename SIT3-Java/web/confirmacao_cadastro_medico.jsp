@@ -6,7 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
+<jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
 <jsp:setProperty property="*" name="medico"/> 
+
 <!DOCTYPE html>
 <html>
     <head>

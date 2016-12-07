@@ -20,15 +20,32 @@ public class PlanoDeSaudeData {
         String query = "INSERT INTO planos_de_saude (nome_plano) VALUES ('" + plano.getNome() + "')";
         tr.execute(query);
     }
+//    
+//    public void alternar(DbTransaction tr, PlanoDeSaudeDO plano) throws Exception
+//    {
+//        String query = "update planos_de_saude set nome_plano='toscao' where id =9";
+//        tr.execute(query);
+//    }
+    
+    public String obterIdPorNome(DbTransaction tr, String nome) throws Exception
+    {
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM planos_de_saude WHERE nome_plano = '" + nome + "'";
+        results = tr.query(query);
+        if (results.size() > 0) {
+            return results.getItem(0).getItem(0);
+        }
+        
+        return "";
+    }
     
    public PlanoDeSaudeDO selecionarPorId(DbTransaction tr, String id) throws Exception
     {
         DbCollection results = new DbCollection();
-        String query = "SELECT * FROM planos_de_saude WHERE id = " + id;
+        String query = "SELECT * FROM planos_de_saude WHERE id =" + id;
         results = tr.query(query);
         PlanoDeSaudeDO plano = new PlanoDeSaudeDO();
         plano.setNome(results.getItem(0).getItem(1));
-        
         return plano;
     }
     
@@ -64,6 +81,16 @@ public class PlanoDeSaudeData {
     
     public void incluirRelacaoHospitalPlano(DbTransaction tr, String hid, String pid) throws Exception {
         String query = "INSERT INTO planos_de_saude_has_hospitais (hospitais_id,planos_de_saude_id) VALUES ("+hid+","+pid+")";
+        tr.execute(query);
+    }
+    public void remover(DbTransaction tr, String id) throws Exception
+    {
+        String query = "DELETE FROM planos_de_saude WHERE id = "+id;
+        tr.execute(query);
+    }
+    public void editar(DbTransaction tr, String plano, String nome) throws Exception
+    {
+        String query = "UPDATE planos_de_saude SET nome_plano = '" + nome + "'WHERE id = " + plano;
         tr.execute(query);
     }
     

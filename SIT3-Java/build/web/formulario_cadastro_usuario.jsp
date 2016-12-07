@@ -50,10 +50,6 @@
 
        <input type="text" name="endereco" required><br><br>
        
-       Endere&ccedil;o de e-mail:<br>
-
-       <input type="text" name="email" required><br><br>
-       
         Username:<br>
 
        <input type="text" name="username" required><br><br>

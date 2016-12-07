@@ -61,11 +61,17 @@ public class HospitalData {
         String query = "SELECT * FROM hospitais WHERE id IN (SELECT hospitais_id FROM planos_de_saude_has_hospitais WHERE planos_de_saude_id = "+pid+")";
         results = tr.query(query);
         return results;
-     }
+    }
   
     public DbCollection retornarHospitaisComMedicos(DbTransaction tr, String pid) throws Exception {
          DbCollection results = new DbCollection();
         String query = "SELECT * FROM hospitais WHERE id IN (SELECT id_hospital FROM medico_trabalha_em_hosp WHERE id_medico = "+pid+")";
+    }
+
+    public DbCollection retornarHospitaisNaoAceitamPlano (DbTransaction tr, String pid) throws Exception {
+         DbCollection results = new DbCollection();
+        String query = "SELECT * FROM hospitais WHERE id NOT IN (SELECT hospitais_id FROM planos_de_saude_has_hospitais WHERE planos_de_saude_id = "+pid+")";
+
         results = tr.query(query);
         return results;
      }
@@ -73,6 +79,11 @@ public class HospitalData {
     public void remover(DbTransaction tr, String id) throws Exception
     {
         String query = "DELETE FROM hospitais WHERE id = "+id;
+        tr.execute(query);
+    }
+    public void editar(DbTransaction tr, String hospital, String nome, String telefone, String endereco) throws Exception
+    {
+        String query = "UPDATE hospitais SET nome = '" + nome + "', telefone = '"+telefone+"', endereco = '"+endereco+"' WHERE id = '" + hospital+"'";
         tr.execute(query);
     }
      

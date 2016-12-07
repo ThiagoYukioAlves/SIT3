@@ -6,7 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
-
+<jsp:useBean id="usuario" class="usuario.Usuario"></jsp:useBean> 
+<jsp:useBean id="usuarioDO" class="usuario.UsuarioDO"></jsp:useBean> 
+<jsp:setProperty property="*" name="usuarioDO"/> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,12 +20,12 @@
     <form method="post" action="confirmacao_alteracao_senha.jsp">
      <fieldset>
        <legend>Dados:</legend>
-       <br>Nome de Usuário:<br>
-       <input type="text" name="username" required><br><br>
        <br>Senha antiga:<br>
        <input type="text" name="senha" required><br><br>
        <br>Senha nova:<br>
-       <input type="text" name="senhaNova" required><br><br>
+       <input type="text" name="senha" required><br><br>
+       <br>Insira novamente sua senha:<br>
+       <input type="text" name="senha" required><br><br>
        
        <br><input type="submit" value="Continuar">
      </fieldset>

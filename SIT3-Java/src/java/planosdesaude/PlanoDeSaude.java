@@ -6,6 +6,8 @@
 package planosdesaude;
 
 import database.*;
+import hospitais.HospitalDO;
+import hospitais.HospitalData;
 
 /**
  *
@@ -127,8 +129,81 @@ public class PlanoDeSaude {
 
              return null; // caso algo deu errado
        }
+       public DbCollection retornarTodosPlanos() throws Exception { 
+         try {
+            DbTransaction tr = new DbTransaction();
+            DbCollection results;
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            results = planoData.retornarTodosPlanos(tr);
+            return results;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de todos os hospitais");
+        }
+        
+        return null; // caso algo deu errado
+     }
+       public boolean remover(String id) throws Exception {
+          try {
+            DbTransaction tr = new DbTransaction();
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            planoData.remover(tr, id);
+            return true;
+            }
+            catch (Exception e) {
+            System.out.println("Erro na remocao de hospital.");
+        }
+        
+        return false; // caso algo deu errado
+     }
+    public boolean incluir(PlanoDeSaudeDO plano) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            planoData.incluir(tr, plano);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao de hospital.");
+        }
+        
+        return false; // caso algo deu errado
+    }
+    public String obterIdPorNome(String nome) throws Exception
+    {
+        String id;
+        
+        try {
+            DbTransaction tr = new DbTransaction();
+            PlanoDeSaudeDO planoDO;
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            id = planoData.obterIdPorNome(tr, nome);
+            return id;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de hospital por nome.");
+        }
+        
+        return null; // caso algo deu errado
+    }
+    public boolean editar(String pid, String nome) throws Exception {
+           try {
+                DbTransaction tr = new DbTransaction();
+                PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+                planoData.editar(tr, pid, nome);
+                return true;
+            }
+            catch (Exception e) {
+                System.out.println("Erro na inclusao de relacao plano-hospital");
+            }
+
+            return false; // caso algo deu erradoplanoDO = plano.selecionarPorId(request.getParameter("planoid"
+        }
        
-       }
+    }
+       
+     
             
 
   

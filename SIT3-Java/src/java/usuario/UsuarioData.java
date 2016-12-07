@@ -62,7 +62,8 @@ public class UsuarioData {
         return usuario;
     }
     
-        public DbCollection retornarAgendaUsuario(DbTransaction tr, String pid) throws Exception {
+    public DbCollection retornarAgendaUsuario(DbTransaction tr, String pid) throws Exception
+    {
         DbCollection results = new DbCollection();
         String query = "SELECT * FROM agenda_medicos WHERE id_usuario = "+pid+"";
         results = tr.query(query);
@@ -124,8 +125,15 @@ public class UsuarioData {
         System.out.println(senha);
         return usuario.getSenha().equals(senha);
     }
-    
-    
+
+
+    public void editar(DbTransaction tr, String id, String nome, String telefone, String data, String idPlano, String privilegio, String portador, String endereco, String username, String senha) throws Exception
+    {
+        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', data_de_nascimento = '"+ data + "', id_plano = '"+ idPlano + "', privilegio = '" + privilegio + "', portador_de_deficiencia = '" + portador + "', endereco = '" + endereco + "' WHERE id = " + id;
+        tr.execute(query);
+    }
+
+
     public boolean esqueciMinhaSenha(DbTransaction tr, UsuarioDO usuario) throws Exception
     {
         String uuid = UUID.randomUUID().toString();
@@ -134,5 +142,19 @@ public class UsuarioData {
         tr.execute(query);
         return usuario.getSenha().equals(uuid);
     }
-    
+
+    public String teste(String id, String nome, String telefone, String data, String idPlano, String privilegio, String portador, String endereco, String username, String senha) throws Exception
+    {
+        String query = "UPDATE usuario SET nome = '" + nome + "', telefone ='" + telefone + "', id_plano = '"+ idPlano + "', data_de_nascimento = '" + data + "', portador_de_deficiencia = '" + portador + "', endereco = '" + endereco + "' WHERE id = " + id;
+        return query;
+    }
+
+    public String PegaIdPorUsername(DbTransaction tr, String username) throws Exception{
+        DbCollection results = new DbCollection();
+        String query = "SELECT * FROM usuario WHERE username = '" + username+ "'";
+        results = tr.query(query);
+        String id;
+        id = results.getItem(0).getItem(0);
+        return id;
+    }
 }
