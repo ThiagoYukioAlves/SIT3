@@ -5,23 +5,13 @@
 --%>
 
 
-            <%@page import="usuario.Usuario"%>
-            <%
-                if (session.getAttribute("privilegio") == null || !session.getAttribute("privilegio").equals("1")) {
-            %>
-
-            <script>
-                alert("Você não tem permissão para acessar essa página!");
-                window.location.replace("index.jsp");
-            </script>
-
-            <% } %>
-
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 
-<jsp:useBean id="usuario" class="usuario.Usuario"></jsp:useBean> 
-<jsp:useBean id="usuarioDO" class="usuario.UsuarioDO"></jsp:useBean> 
+<jsp:useBean id="user" class="usuario.Usuario" scope="session"></jsp:useBean> 
+<jsp:useBean id="usuarioDO" class="usuario.UsuarioDO" scope="session"></jsp:useBean> 
+<jsp:useBean id="usuarioDO2" class="usuario.UsuarioDO" scope="session"></jsp:useBean> 
+<jsp:useBean id="usuarioData" class="usuario.UsuarioData" scope="session"></jsp:useBean> 
 <jsp:setProperty property="*" name="usuarioDO"/> 
 <!DOCTYPE html>
 <html>
@@ -31,11 +21,26 @@
     </head>
     <body>
         
-        <h1><%= usuarioDO.getNome() %></h1>
-        <% if (usuario.alterarSenha(usuarioDO, usuarioDO.getSenha())) { %>
-        <h3>Senha alterada com sucesso! </h3> 
-        <h3>         - <a href='index.jsp'>Voltar</a> </h3>
-        <% } %>
+        <h2><%
+            
+        System.out.println(usuarioDO.getSenha());
+        System.out.println(String.valueOf(session.getAttribute("username")));
+        usuarioDO2 = user.selecionarPorUsername(String.valueOf(session.getAttribute("username")));
+            
+        if (usuarioDO2.getSenha().equals(usuarioDO.getSenha()))
+        {
+            user.alterarSenha(usuarioDO,usuarioDO.getSenhaNova());
+            session.setAttribute("senha", usuarioDO.getSenhaNova());
+        }
+        else{
+        %> Houve um erro. <%
+        }
+           
+            
+        %>
+        <a href ='index.jsp'> Voltar para página inicial </a>
+        
+        </h2>
         <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
 
     </body>

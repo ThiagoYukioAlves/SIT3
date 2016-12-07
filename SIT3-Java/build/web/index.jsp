@@ -40,6 +40,8 @@
            Senha:<br>
 
            <input type="password" name="senha" required><br><br>
+           
+           <a href = 'esqueci_senha.jsp'>Esqueci minha senha</a><br>
 
            <br><input type="submit" value="Enviar">
 
@@ -57,7 +59,7 @@
         
         <% if (session.getAttribute("privilegio").equals("1")) {%> 
         
-        <h3> Menu de administrador: </h3>
+        <h4> Menu de administrador: </h4>
                
         <div>
             <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
@@ -70,7 +72,7 @@
             <div>
                 <a style="display: inline" href='formulario_cadastro_hospital.jsp'>Cadastro Hospitais</a>
             </div>
-            <div style="display: inline; margin: 5px; border: 1px solid black; padding: 5px; padding-bottom: 2px;">
+            <div>
                 <a href='formulario_cadastro_medico.jsp'>Cadastro médico</a>
             </div>
             <div>
@@ -78,6 +80,9 @@
             </div>
             <div>
                 <a style="display: inline" href='consulta_planos.jsp'>Consulta Planos de Saúde</a>
+            </div>
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
             </div>
         </div>    
         
@@ -100,6 +105,9 @@
             </div>
             <div>
                 <a style="display: inline" href='desmarcar_consulta.jsp#'>Desmarcar Consultas</a>
+            </div>            
+            <div>
+                <a style="display: inline" href='alterar_senha.jsp'>Alterar Senha</a>
             </div>
             
         </div>    

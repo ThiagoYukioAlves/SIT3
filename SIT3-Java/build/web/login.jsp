@@ -6,8 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
-<jsp:useBean id="usuario" class="usuario.Usuario"></jsp:useBean> 
-<jsp:useBean id="usuarioDO" class="usuario.UsuarioDO"></jsp:useBean> 
+<jsp:useBean id="usuario" class="usuario.Usuario" scope="session"></jsp:useBean> 
+<jsp:useBean id="usuarioDO" class="usuario.UsuarioDO" scope="session"></jsp:useBean> 
 <jsp:setProperty property="*" name="usuarioDO"/> 
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,8 @@
             session.setAttribute("nome", usuarioDO.getNome());
             session.setAttribute("privilegio", usuarioDO.getPrivilegio());
             session.setAttribute("idPlano", usuarioDO.getIdPlano());
+            session.setAttribute("senha", usuarioDO.getSenha());
+            session.setAttribute("senhaNova", usuarioDO.getSenhaNova());
         %>
             <h3>Bem vindo, <%= usuarioDO.getUsername() %>. <a href='index.jsp'> Clique aqui</a> para ir para a pagina inicial</h3>
         <% } else { %>
