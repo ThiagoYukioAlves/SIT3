@@ -4,9 +4,14 @@
     Author     : Thiago
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<link type="text/css" rel="Stylesheet" href="style.css"/>
+
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
-<jsp:setProperty property="*" name="medico"/> 
+<jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
+<jsp:setProperty property="*" name="medicoDO"/> 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +19,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% medico.salvarMedico(); %>
-        <h1>Seja bem-vindo, <%= medico.getNome() %>. Seu cadastro foi incluido com sucesso!</h1> <br>
+        <% medico.incluir(medicoDO); %>
+        <h1>Seja bem-vindo, <%= medicoDO.getNome() %>. Seu cadastro foi incluido com sucesso!</h1> <br>
         <h1><a href="index.jsp"> Voltar </a></h1> <br>
     </body>
 </html>
