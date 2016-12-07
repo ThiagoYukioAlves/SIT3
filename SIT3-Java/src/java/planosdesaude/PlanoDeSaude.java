@@ -14,7 +14,53 @@ import database.*;
  */
 public class PlanoDeSaude {
     
+     public boolean incluir(PlanoDeSaudeDO plano) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            planoData.incluir(tr, plano);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao do plano de saude.");
+        }
         
+        return false; // caso algo deu errado
+    }
+//    public boolean alterar(PlanoDeSaudeDO plano) throws Exception 
+//    {
+//        try {
+//            DbTransaction tr = new DbTransaction();
+//            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+//            planoData.alternar(tr, plano);
+//            return true;
+//        }
+//        catch (Exception e) {
+//            System.out.println("Erro na inclusao do plano de saude.");
+//        }
+//
+//        return false; // caso algo deu errado
+//    }
+     
+    public String obterIdPorNome(String nome) throws Exception
+    {
+        String id;
+        
+        try {
+            DbTransaction tr = new DbTransaction();
+            PlanoDeSaudeDO planoDO;
+            PlanoDeSaudeData planoData = new PlanoDeSaudeData();
+            id = planoData.obterIdPorNome(tr, nome);
+            return id;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de hospital por nome.");
+        }
+        
+        return null; // caso algo deu errado
+    }
+     
     public String retornaSelectDePlanos() throws Exception 
     // Essa funcao retorna um select em html preenchido com todos os planos de saude
     {

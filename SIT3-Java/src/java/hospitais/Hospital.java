@@ -79,22 +79,6 @@ public class Hospital {
         return null; // caso algo deu errado
     }
      
-    public DbCollection retornarHospitaisComMedicos(String pid) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            HospitalData hospData = new HospitalData();
-            results = hospData.retornarHospitaisComMedicos(tr, pid);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de hospitais que aceitam  certo plano");
-        }
-        
-        return null; // caso algo deu errado
-    }
-     
      public DbCollection retornarTodosHospitais() throws Exception { 
          try {
             DbTransaction tr = new DbTransaction();

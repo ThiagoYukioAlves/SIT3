@@ -1,46 +1,57 @@
 <%-- 
-    Document   : consulta_medicos
-    Created on : Nov 23, 2016, 8:53:29 PM
-    Author     : Thiago
+    Document   : consulta_medico
+    Created on : Dec 4, 2016, 8:19:37 PM
+    Author     : Pedro
 --%>
+
 
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <link type="text/css" rel="Stylesheet" href="style.css"/>
 <jsp:useBean id="medico" class="medico.Medico"></jsp:useBean> 
 <jsp:useBean id="medicoDO" class="medico.MedicoDO"></jsp:useBean> 
 <jsp:useBean id="lista_medico" class="database.DbCollection"></jsp:useBean>
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Consulta Medicos</title>
-    
-  </head>
-  <body>
-        <h1>Consulta de médicos</h1>
-        <!--Pega toda tabela medicos no banco de dados-->
-        <%DbCollection listaMedicos = medico.consultaMedicos();%>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
         
-        <!--Cria uma tabela-->
-        <table>
-            <tr>   <!--Linhas com titulos-->
-                <th>Medico</th>
-                <th>Especialidade</th>
-                <th>Telefone</th>
-                <th>CRM</th>
-            </tr>
-            <tr>   <!--Linhas com medico-->
-                <th>Medico</th>
-                <th>Especialidade</th>
-                <th>Telefone</th>
-                <th>CRM</th>
-            </tr>
+        <h1>Listagem de medicos</h1>
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+        
+        <%
+            if (session.getAttribute("privilegio") == null || !session.getAttribute("privilegio").equals("1")) {
+        %>
+
+        <script>
+            alert("Você não tem permissão para acessar essa página!");
+            window.location.replace("index.jsp");
+        </script>
+   
+    <% 
+       }
+       
+       if (request.getParameter("action") != null && request.getParameter("action").equals("remove")){
+           medico.remover(request.getParameter("medid"));
+       }
             
-            
-        </table>
- 
+       lista_medico = medico.retornarTodosMedicos();
+       int i = 0;
+       while (i < lista_medico.size()) {
+           %>
+           <h3><%= lista_medico.getItem(i).getItem(1)%> - <%= lista_medico.getItem(i).getItem(3)%> - 
+               <a href="excluir_medico.jsp?action=remove&medid=<%=lista_medico.getItem(i).getItem(0)%>">[Excluir]</a>
+               <a href="editar_medico.jsp?medid=<%=lista_medico.getItem(i).getItem(0)%> "> [Alterar]</a>
+           </h3>
+           <%
+           i++;
+       }
+    %>
+        
+        <hr style="height:2px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/>
+        <h3><a href="index.jsp">Voltar</a></h3>
+    </body>
     
-  </body>
 </html>

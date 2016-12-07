@@ -28,6 +28,21 @@ public class Usuario {
         return false; // caso algo deu errado
     }
     
+    public boolean alterarSenha(UsuarioDO usuario,String senha) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.alterarSenha(tr, usuario,senha);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao de usuario.");
+        }
+        
+        return false; // caso algo deu errado
+    }
+    
     public UsuarioDO selecionarPorId(String id) throws Exception
     {
         try {
@@ -39,39 +54,6 @@ public class Usuario {
         }
         catch (Exception e) {
             System.out.println("Erro na recuperacao de usuario por ID.");
-        }
-        
-        return null; // caso algo deu errado
-    }
-    
-    public DbCollection retornarAgendaUsuario(String pid) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            UsuarioData usuData = new UsuarioData();
-            results = usuData.retornarAgendaUsuario(tr, pid);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de meditais que aceitam  certo plano");
-        }
-        
-        return null; // caso algo deu errado
-    }
-    
-    
-   public DbCollection SelecionarIdUsuario(String user) throws Exception
-    {
-        try {
-            DbTransaction tr = new DbTransaction();
-            DbCollection results;
-            UsuarioData medData = new UsuarioData();
-            results = medData.SelecionarIdUsuario(tr, user);
-            return results;
-        }
-        catch (Exception e) {
-            System.out.println("Erro na recuperacao de meditais que aceitam  certo plano");
         }
         
         return null; // caso algo deu errado
@@ -127,20 +109,33 @@ public class Usuario {
         return false; // caso algo deu errado
     } 
     
-    public boolean desmarcarConsulta(String id_usuario, String id_consulta) throws Exception 
-    {
-        try {
+         public DbCollection retornarTodosUsuarios() throws Exception { 
+         try {
             DbTransaction tr = new DbTransaction();
-            UsuarioData medData = new UsuarioData();
-            medData.desmarcarConsulta(tr, id_usuario, id_consulta);
+            DbCollection results;
+            UsuarioData UserData = new UsuarioData();
+            results = UserData.retornarTodosUsuarios(tr);
+            return results;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na recuperacao de todos os medicos");
+        }
+        
+        return null; // caso algo deu errado
+     }
+     
+     public boolean remover(String id) throws Exception {
+          try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.remover(tr, id);
             return true;
         }
         catch (Exception e) {
-            System.out.println("Erro na inclusao de medico.");
+            System.out.println("Erro na remocao de medico.");
         }
         
         return false; // caso algo deu errado
-    }
-     
+     }
     
 }
