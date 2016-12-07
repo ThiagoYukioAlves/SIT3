@@ -6,6 +6,7 @@
 package usuario;
 
 import database.*;
+import org.apache.commons.mail.*;
 
 /**
  *
@@ -141,6 +142,58 @@ public class Usuario {
         
         return false; // caso algo deu errado
     }
-     
     
+    public boolean alterarSenha(UsuarioDO usuario,String senha) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.alterarSenha(tr, usuario,senha);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na inclusao de usuario.");
+        }
+        
+        return false; // caso algo deu errado
+    }
+     
+    public boolean esqueciMinhaSenha(UsuarioDO usuario) throws Exception 
+    {
+        try {
+            DbTransaction tr = new DbTransaction();
+            UsuarioData UserData = new UsuarioData();
+            UserData.esqueciMinhaSenha(tr, usuario);
+            return true;
+        }
+        catch (Exception e) {
+            System.out.println("Erro na troca de senha.");
+        }
+        
+        return false; // caso algo deu errado
+    }
+    
+    public static void enviaEmail(UsuarioDO usuario)
+    {
+        String myEmailId = "rescuewayt3@gmail.com";
+        String myPassword = "rescuewaysit3";
+        String senderId = usuario.getEmail();
+        try {
+            MultiPartEmail email = new MultiPartEmail();
+            email.setSmtpPort(587);
+            email.setAuthenticator(new DefaultAuthenticator(myEmailId, myPassword));
+            email.setDebug(true);
+            email.setHostName("smtp.gmail.com");
+            email.setFrom(myEmailId);
+            email.setSubject("RescueWay - Oi "+usuario.getNome()+"!");
+            email.setMsg("Oi "+usuario.getNome()+", vimos que você pediu uma nova senha!\n A sua nova senha é "+usuario.getSenha()+"\n ABRUCE!");
+            email.addTo(senderId);
+            email.setTLS(true);
+
+            email.send();
+            System.out.println("Mail sent!");
+        } catch (Exception e) {
+            System.out.println("Exception :: " + e);
+        }
+    }
 }

@@ -6,6 +6,7 @@
 package usuario;
 
 import database.*;
+import java.util.UUID;
 
 /**
  *
@@ -15,9 +16,9 @@ public class UsuarioData {
     
     public void incluir(DbTransaction tr, UsuarioDO user) throws Exception
     {
-        String query = "INSERT INTO usuario (nome,id_plano,portador_de_deficiencia,data_de_nascimento,telefone,endereco,username,senha) VALUES" +
+        String query = "INSERT INTO usuario (nome,id_plano,portador_de_deficiencia,data_de_nascimento,telefone,endereco,username,senha,email) VALUES" +
                 "('" + user.getNome() + "'," + user.getIdPlano() + "," + user.getPortadorDeDeficiencia() + ",'" + user.getDataDeNascimento() + 
-                "','"+ user.getTelefone() + "','" + user.getEndereco() + "','" + user.getUsername() + "','" + user.getSenha() + "')";
+                "','"+ user.getTelefone() + "','" + user.getEndereco() + "','" + user.getUsername() + "','" + user.getSenha() + "','" + user.getEmail() + "')";
         tr.execute(query);
         
     }
@@ -37,7 +38,7 @@ public class UsuarioData {
         usuario.setSenha(results.getItem(0).getItem(7));
         usuario.setIdPlano(results.getItem(0).getItem(8));
         usuario.setUsername(results.getItem(0).getItem(9));
-        
+        usuario.setEmail(results.getItem(0).getItem(10));
         return usuario;
     }
     
@@ -56,6 +57,7 @@ public class UsuarioData {
         usuario.setSenha(results.getItem(0).getItem(7));
         usuario.setIdPlano(results.getItem(0).getItem(8));
         usuario.setUsername(results.getItem(0).getItem(9));
+        usuario.setEmail(results.getItem(0).getItem(10));
         
         return usuario;
     }
@@ -111,6 +113,26 @@ public class UsuarioData {
         String query = "UPDATE agenda_medicos SET id_usuario = 0 WHERE id_consulta = "+id_consulta+"" ;
         tr.execute(query);
         
+    }
+    
+    public boolean alterarSenha(DbTransaction tr, UsuarioDO usuario, String senha) throws Exception
+    {
+        String query = "UPDATE usuario SET senha = '"+senha+"' WHERE username = '"+usuario.getUsername()+"'";
+        tr.execute(query);
+        System.out.println(usuario.getSenha());
+        System.out.println(usuario.getSenhaNova());
+        System.out.println(senha);
+        return usuario.getSenha().equals(senha);
+    }
+    
+    
+    public boolean esqueciMinhaSenha(DbTransaction tr, UsuarioDO usuario) throws Exception
+    {
+        String uuid = UUID.randomUUID().toString();
+        String query = "UPDATE usuario set senha = '"+uuid+"' where username = '"+usuario.getUsername()+"'";
+        usuario.setSenha(uuid);
+        tr.execute(query);
+        return usuario.getSenha().equals(uuid);
     }
     
 }
